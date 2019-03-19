@@ -1,0 +1,30 @@
+.header {
+    background-color: $pink;
+    border-bottom: 1px solid $borderPink;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.small-logo-wrap {
+    background-color: $blue;
+    display: block;
+	height: 50px;
+	width: 55px;
+    z-index: 10;
+    
+    a {
+        height: 100%;
+        width: 100%;
+    }
+
+	.small-logo {
+		left: 30%;
+		position: relative;
+		right: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}

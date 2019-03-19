@@ -1,0 +1,8 @@
+# Node Modules
+/node_modules/
+
+#pnpm
+shrinkwrap.yaml
+
+#Webpack build
+/dist/

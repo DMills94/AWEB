@@ -1,0 +1,36 @@
+.footer {
+    height: 210px;
+    justify-content: space-between;
+}
+
+.contact-wrap {
+    border-top: 1px solid $borderPink;
+    box-sizing: border-box;
+    flex-grow: 1;
+    padding-left: 15%;
+    
+    .social-media-wrap {
+        justify-content: space-between;
+        margin-top: 32px;
+        width: 443px;
+    }
+}
+
+.mmd-wrap {
+    background-color: $blue;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px;
+    width: 310px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .mmd-logo {
+        margin-bottom: 16px;
+        width: 70px;
+        height: 70px;
+    }
+}

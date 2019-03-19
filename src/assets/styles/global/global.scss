@@ -1,0 +1,94 @@
+/////////////////////////////
+/////	GLOBAL STYLING  /////
+/////////////////////////////
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	position: relative;
+}
+
+//FONTS
+h1 {
+	font-family: $avenir;
+	font-size: 66px;
+	font-weight: 600;
+	line-height: 66px;
+}
+
+h4 {
+	font-family: $avenir;
+	font-size: 18px;
+	line-height: 18px;
+	margin: 0 0 8px;
+}
+
+a {
+	color: $darkBlue;
+	font-size: 18px;
+	position: relative;
+	z-index: 100;
+
+	&:hover,
+	:visited {
+		color: $darkBlue;
+	}
+
+	&.white {
+		color: $white;
+	}
+}
+
+p {
+	color: $blue;
+	font-family: $avenir;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 0;
+
+	&.brown {
+		color: $brown;
+	}
+
+	&.bold {
+		font-weight: 600;
+	}
+}
+
+.txt-white {
+	color: $white;
+
+	&:hover {
+		color: $white;
+	}
+}
+
+
+//FLEXBOX
+.flex {
+	display: flex;
+
+	&.align-h {
+		justify-content: center;
+	}
+
+	&.align-v {
+		align-items: center;
+	}
+
+	&.center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+
+	&.wrap {
+		flex-wrap: wrap;
+	}
+}

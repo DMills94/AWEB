@@ -1,0 +1,137 @@
+.homepage {
+    background-color: $pink;
+    margin-top: 50px;
+    min-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    color: $blue;
+}
+
+// Absolute Positioned Elements
+.parallax-wrap {
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+
+    .item {
+        background-repeat: no-repeat;
+        background-size: auto;
+        height:100%;
+        position: fixed;
+        width:100%;
+    }
+}
+
+#letterA {
+    background-image: url('../../assets/icons/letter-A.svg');
+    background-position: top right;
+    will-change: transform;
+}
+
+#letterC {
+    background-image: url('../../assets/icons/letter-C.svg');
+    background-position: bottom left;
+    will-change: transform;
+}
+
+// Content
+.content-wrap {
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1110px;
+    min-height: calc(100vh - 50px);
+    padding: 0 40px;
+
+    .left {
+        max-width: 360px;
+
+        .hello {
+            border-left: 4px solid $blue;
+            left: -16px;
+            margin-bottom: 42px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .brown {
+            width: 210px;
+        }
+
+        .list {
+            height: 160px;
+            justify-content: space-between;
+            margin: 28px 0 52px;
+        }
+
+        .left-border {
+            padding-left: 16px;
+            position: relative;
+
+            &:before {
+                border-left: 3px solid $blue;
+                content: "";
+                height: 70%;
+                left: 0;
+                margin: auto;
+                position: absolute;
+                top: 10%;
+                transform: skewX(-15deg);
+                transition: all 0.2s ease-in-out;
+                width: auto;
+            }
+
+            &:hover {
+                &:before {
+                    transform: skewX(0);
+                }
+            }
+        }
+
+        .contact {
+            height: 55px;
+            justify-content: space-between;
+        }
+    }
+
+    .right {
+        height: calc(100vh - 50px);
+        position: relative;
+        width: 600px;
+
+        .name-wrap {
+            height: 90px;
+            left: 0;
+            position: absolute;
+            top: 206px;
+            z-index: 2;
+
+            .second {
+                margin-left: 47px;
+            }
+        }
+
+        .portrait {
+            left: 184px;
+            position: absolute;
+            top: 72px;
+            z-index: 1;
+        }
+
+        .shadow {
+            background-color: $borderPink;
+            height: 368px;
+            left: 114px;
+            padding: 290px 24px 0 105px;
+            position: absolute;
+            top: 254px;
+            width: 388px;
+        }
+    }
+}
