@@ -1,7 +1,6 @@
 .header {
     background-color: $pink;
-    border-bottom: 1px solid $borderPink;
-    height: 50px;
+    height: 60px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -11,8 +10,8 @@
 .small-logo-wrap {
     background-color: $blue;
     display: block;
-	height: 50px;
-	width: 55px;
+	height: 60px;
+	width: 85px;
     z-index: 10;
     
     a {
@@ -21,10 +20,11 @@
     }
 
 	.small-logo {
-		left: 30%;
-		position: relative;
-		right: 8px;
-		top: 50%;
-		transform: translateY(-50%);
+        left: 55%;
+        position: relative;
+        height: 20px;
+        right: 8px;
+        top: 65%;
+        transform: translateY(-50%);
 	}
 }

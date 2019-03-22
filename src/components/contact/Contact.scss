@@ -1,0 +1,45 @@
+.contact-background {
+    @include background-color-opacity($white, 0.3);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+
+    &.dis-n {
+        display: none;
+    }
+}
+
+.contact-modal {
+    background-color: $blue;
+    border-top: 2px solid $borderPink;
+    color: $white;
+    padding: 32px 0 52px;
+    text-align: center;
+    width: 40%;
+
+    .contact-wrap {
+        border: 0;
+        padding: 0;
+    }
+
+    .social-media-wrap {
+        justify-content: space-around;
+        margin: 0;
+        width: 100%;
+    }
+
+    a {
+        color: $pink;
+
+        &:hover {
+            color: $borderPink;
+        }
+    }
+
+    p {
+        margin: 16px 0;
+    }
+}

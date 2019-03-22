@@ -10,7 +10,7 @@ h1 {
     color: $blue;
 }
 
-// Absolute Positioned Elements
+// Parallax Elements
 .parallax-wrap {
     height: 100%;
     left: 0;
@@ -109,7 +109,7 @@ h1 {
             height: 90px;
             left: 0;
             position: absolute;
-            top: 206px;
+            top: 218px;
             z-index: 2;
 
             .second {

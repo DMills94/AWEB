@@ -15,7 +15,7 @@ class App extends Component {
             <Fragment>
                 <Header />
                 <Homepage />
-                <Contact />
+                <Contact show={this.state.showContact} />
             </Fragment>
         )
     }

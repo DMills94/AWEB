@@ -21,7 +21,7 @@ const Homepage = () => {
 
     return (
         <section className='homepage'>
-            <div class="parallax-wrap" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+            <div className="parallax-wrap" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
                 {/* Parallax Elements */}
                 <animated.div className='item' id='letterA' style={{ transform: props.xy.interpolate(trans1) }} />
                 <animated.div className='item' id='letterC' style={{ transform: props.xy.interpolate(trans2) }} />
