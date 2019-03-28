@@ -52,8 +52,7 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        publicPath: '/dist/',
-        path: path.resolve(__dirname, 'dist/')
+        path: path.resolve(__dirname, './dist')
     },
     plugins: [
         new HtmlWebPackPlugin({
