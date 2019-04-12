@@ -52,7 +52,8 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist')
+        path: path.resolve(__dirname, './dist'),
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebPackPlugin({
@@ -62,7 +63,8 @@ module.exports = {
     ],
     devServer: {
         contentBase: './dist',
-        port: 4000,
-        hotOnly: true
+        historyApiFallback: true,
+        hotOnly: true,
+        port: 4000
     }
 }

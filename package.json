@@ -6,8 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --open --mode development",
-    "start": "node server.js",
-    "heroku-postbuild": "webpack -p"
+    "start": "node server.js"
   },
   "author": "David Mills",
   "devDependencies": {
@@ -36,6 +35,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "react-router-dom": "^5.0.0",
     "react-spring": "^8.0.15"
   }
 }
