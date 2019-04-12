@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 //Assets
 import smallLogo from '../../assets/icons/small-logo.svg'
@@ -8,10 +9,13 @@ import './Header.scss'
 
 const Header = () => {
     return (
-        <div className="header">
-            <a href='/' className='small-logo-wrap'>
+        <div className="header flex align-v">
+            <NavLink to='/' className='small-logo-wrap'>
                 <img className='small-logo' src={smallLogo}></img>
-            </a>
+            </NavLink>
+            <p className='talk'>
+                LET'S TALK
+            </p>
         </div>
     )
 }

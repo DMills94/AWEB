@@ -6,17 +6,32 @@
 	box-sizing: border-box;
 }
 
+.background {
+	background-color: $background;
+	height: 100%;
+	width: 100%;
+}
+
 .container {
-	max-width: 953px;
+	max-width: 1110px;
 	position: relative;
 }
 
 //FONTS
 h1 {
 	font-family: $avenir;
-	font-size: 66px;
+	font-size: 70px;
+	font-weight: 400;
+	line-height: 87px;
+	margin: 0;
+}
+
+h2 {
+	font-family: $avenir;
+	font-size: 40px;
 	font-weight: 600;
-	line-height: 66px;
+	line-height: 60px;
+	margin: 0;
 }
 
 h4 {

@@ -1,6 +1,4 @@
 .homepage {
-    background-color: $pink;
-    margin-top: 50px;
     min-width: 100%;
     overflow: hidden;
     position: relative;
@@ -12,13 +10,6 @@ h1 {
 
 // Parallax Elements
 .parallax-wrap {
-    height: 100%;
-    left: 0;
-    position: relative;
-    top: 0;
-    width: 100%;
-    z-index: 5;
-
     .item {
         background-repeat: no-repeat;
         background-size: auto;
@@ -46,92 +37,72 @@ h1 {
     justify-content: space-around;
     margin: 0 auto;
     max-width: 1110px;
-    min-height: calc(100vh - 50px);
+    min-height: 100vh;
     padding: 0 40px;
 
     .left {
+        height: 100vh;
+        justify-content: space-around;
         max-width: 360px;
-
-        .hello {
-            border-left: 4px solid $blue;
-            left: -16px;
-            margin-bottom: 42px;
-            padding-left: 16px;
-            position: relative;
-        }
-
-        .brown {
-            width: 210px;
-        }
-
-        .list {
-            height: 160px;
-            justify-content: space-between;
-            margin: 28px 0 52px;
-        }
-
-        .left-border {
-            padding-left: 16px;
+        padding: 100px 0;
+        position: relative;
+        
+        .menu-item {
+            margin: 46px 0;
+            width: 100%;
             position: relative;
 
-            &:before {
-                border-left: 3px solid $blue;
-                content: "";
-                height: 70%;
-                left: 0;
-                margin: auto;
+            .coming {
+                color: $pink;
                 position: absolute;
-                top: 10%;
-                transform: skewX(-15deg);
+                text-align: center;
+                transform: scaleX(0);
                 transition: all 0.2s ease-in-out;
-                width: auto;
+                width: 100%;
             }
+            
+            &.disabled:hover {
+                * {
+                    color: $pink;
+                    cursor: default;
+                }
 
-            &:hover {
-                &:before {
-                    transform: skewX(0);
+                .coming {
+                    transform: scaleX(1);
                 }
             }
-        }
 
-        .contact {
-            height: 55px;
-            justify-content: space-between;
+            .h1 {
+                cursor: pointer;
+                font-family: $libreBaskerville;
+                font-size: 70px;
+                font-weight: 400;
+                transition: all 0.2s ease-in-out;
+                text-decoration: none;
+            }
         }
     }
 
     .right {
-        height: calc(100vh - 50px);
+        height: 100vh;
         position: relative;
         width: 600px;
+        align-items: center;
 
-        .name-wrap {
-            height: 90px;
-            left: 0;
-            position: absolute;
-            top: 218px;
-            z-index: 2;
+        .messages {
+            justify-content: flex-end;
+            align-items: flex-end;
+            height: 140px;
+            position: relative;
+            left: 125px;
 
-            .second {
-                margin-left: 47px;
+            .message {
+                background-color: $white;
+                border-radius: 20px;
+                border: 1px solid $borderPink;
+                margin-bottom: 12px;
+                padding: 8px 18px;
             }
-        }
-
-        .portrait {
-            left: 184px;
-            position: absolute;
-            top: 72px;
-            z-index: 1;
-        }
-
-        .shadow {
-            background-color: $borderPink;
-            height: 368px;
-            left: 114px;
-            padding: 290px 24px 0 105px;
-            position: absolute;
-            top: 254px;
-            width: 388px;
         }
     }
 }

@@ -1,11 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { useSpring, animated } from 'react-spring'
 
 //Assets
 import portrait from '../../assets/images/portrait.png'
-
-//Components
-import Footer from '../../components/footer/Footer.jsx'
 
 //Styles
 import './Homepage.scss'
@@ -21,42 +19,53 @@ const Homepage = () => {
 
     return (
         <section className='homepage'>
-            <div className="parallax-wrap" onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
+            <div className='parallax-wrap' onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
                 {/* Parallax Elements */}
                 <animated.div className='item' id='letterA' style={{ transform: props.xy.interpolate(trans1) }} />
                 <animated.div className='item' id='letterC' style={{ transform: props.xy.interpolate(trans2) }} />
 
                 {/* Content */}
                 <div className='content-wrap flex wrap'>
-                    <div className='right flex'>
-                        <div className='name-wrap flex column'>
-                            <h1 className='first'>Albina</h1>
-                            <h1 className='second'>Cholak</h1>
-                        </div>
+                    <div className='right flex column align-h'>
                         <img className='portrait' src={portrait} alt='Picture of Albina Cholak'/>
-                        <div className='shadow'>
-                            <p>Lead product designer at Octopus Labs, London.</p>
+                        <div className='messages flex column'>
+                            <p className='message'>Welcome 👋</p>
+                            <p className='message'>My name is Albina Cholak</p>
+                            <p className='message'>I design products & services</p>
+                            <p className='message'>For fun, I give talks & workshops</p>
+                            <p className='message'>and bake cheesecakes 🍰</p>
                         </div>
                     </div>
                     <div className='left flex column center'>
-                        <div className='container'>
-                            <p className='hello bold'><strong>Hello</strong></p>
-                            <p className='brown'>After 6 years in love with design, I:</p>
-                            <div className='list flex column'>
-                                <div className='left-border'><p>Design products & services</p></div>
-                                <div className='left-border'><p>Facilitate workshops</p></div>
-                                <div className='left-border'><p>Gives talks, my next one's in <a href='https://prjctr.com.ua/krupa-en' target='_blank' rel='noopener'>Krupa</a></p></div>
-                                <div className='left-border'><p>Mentor designers</p></div>
-                            </div>
-                            <div className='contact flex column'>
-                                <a href='mailto:hello@albinacholak.com'>hello@albinacholak.com</a>
-                                <p>or see my resume</p>
-                            </div>
+                        <div classNane='menu-item'>
+                            <NavLink
+                                to='/about'
+                                activeClassName='h1'
+                            >
+                                About
+                            </NavLink>
+                        </div>
+                        <div className='menu-item disabled'>
+                            <NavLink
+                                to='/'
+                                activeClassName='h1'
+                            >
+                                Portfolio
+                            </NavLink>
+                            <p className='coming'>Coming soon</p>
+                        </div>
+                        <div className='menu-item disabled'>
+                            <NavLink
+                                to='/'
+                                activeClassName='h1'
+                            >
+                                Insights
+                            </NavLink>
+                            <p className='coming'>Coming soon</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <Footer />
         </section>
     )
 }
