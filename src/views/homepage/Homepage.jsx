@@ -40,11 +40,11 @@ const Homepage = () => {
                         <div className='right-content'>
                             <img className='portrait' src={portrait} alt='Picture of Albina Cholak'/>
                             <div className='messages flex column'>
-                                <p className='message'>Welcome 👋</p>
-                                <p className='message'>My name is Albina Cholak</p>
-                                <p className='message'>I design products & services</p>
-                                <p className='message'>For fun, I give talks & workshops</p>
-                                <p className='message'>and bake cheesecakes 🍰</p>
+                                <p className='message flex center'>Welcome 👋</p>
+                                <p className='message flex center'>My name is Albina Cholak</p>
+                                <p className='message flex center'>I design products & services</p>
+                                <p className='message flex center'>For fun, I give talks & workshops</p>
+                                <p className='message flex center'>and bake cheesecakes 🍰</p>
                             </div>
                         </div>
                     </div>
