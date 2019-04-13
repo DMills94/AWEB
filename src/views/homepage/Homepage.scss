@@ -32,6 +32,7 @@ h1 {
 
 // Content
 .content-wrap {
+    align-items: space-around;
     flex-direction: row-reverse;
     justify-content: space-around;
     margin: 0 auto;
@@ -40,10 +41,7 @@ h1 {
     padding: 0 40px;
 
     .left {
-        height: 100vh;
         justify-content: space-around;
-        margin-right: 32px;
-        max-width: 360px;
         position: relative;
         
         .menu-item {
@@ -71,7 +69,7 @@ h1 {
                 }
             }
 
-            .h1 {
+            a {
                 cursor: pointer;
                 font-family: $libreBaskerville;
                 font-size: 70px;
@@ -84,8 +82,6 @@ h1 {
 
     .right {
         align-items: center;
-        margin-left: 32px;
-        padding-top: 100px;
         position: relative;
 
         .right-content {
@@ -133,6 +129,17 @@ h1 {
                     padding: 4px 9px;
                 }
             }
+        }
+    }
+
+    @include tablet {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 100px;
+        
+        .left {
+            margin-top: 112px;
         }
     }
 }

@@ -35,7 +35,7 @@ const Homepage = () => {
                 <animated.div className='item' id='letterC' style={{ transform: props.xy.interpolate(trans2) }} />
 
                 {/* Content */}
-                <div className='content-wrap flex wrap'>
+                <div className='content-wrap flex'>
                     <div className='right flex column align-h'>
                         <div className='right-content'>
                             <img className='portrait' src={portrait} alt='Picture of Albina Cholak'/>
@@ -52,15 +52,14 @@ const Homepage = () => {
                         <div className='menu-item'>
                             <NavLink
                                 to='/about'
-                                activeClassName='h1'
                             >
                                 About
                             </NavLink>
                         </div>
                         <div className='menu-item disabled'>
                             <NavLink
+                                exact
                                 to='/'
-                                activeClassName='h1'
                             >
                                 Portfolio
                             </NavLink>
@@ -68,8 +67,8 @@ const Homepage = () => {
                         </div>
                         <div className='menu-item disabled'>
                             <NavLink
+                                exact
                                 to='/'
-                                activeClassName='h1'
                             >
                                 Insights
                             </NavLink>
