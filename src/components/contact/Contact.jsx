@@ -44,7 +44,7 @@ class Contact extends Component {
 					</div>
 					<img src={close} onClick={this.props.toggleModal} className='close' alt="X"/>
 					<section className='contact-body'>
-						<h2>Say hello! 📱</h2>
+						<h2 className='bold'>Say hello! 📱</h2>
 						<p>Email <a href="mailto:hello@albinacholak.com">hello@albinacholak.com</a></p>
 						<p>Or fill out this form:</p>
 						<form
