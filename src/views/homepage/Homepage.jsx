@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSpring, animated } from 'react-spring'
 
@@ -17,6 +17,16 @@ const Homepage = () => {
     // Parallax definitions
     const [props, set] = useSpring(() => ({ xy: [0, 0], config: { mass: 10, tension: 550, friction: 200 } }))
 
+    useEffect(() => {
+        const messages = document.querySelectorAll('.message')
+        
+        for (const [i, message] of messages.entries()) {
+            setTimeout(() => {
+                message.classList.add('animate')
+            }, 300 * i);
+        }
+    })
+
     return (
         <section className='homepage'>
             <div className='parallax-wrap' onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}>
@@ -27,13 +37,15 @@ const Homepage = () => {
                 {/* Content */}
                 <div className='content-wrap flex wrap'>
                     <div className='right flex column align-h'>
-                        <img className='portrait' src={portrait} alt='Picture of Albina Cholak'/>
-                        <div className='messages flex column'>
-                            <p className='message'>Welcome 👋</p>
-                            <p className='message'>My name is Albina Cholak</p>
-                            <p className='message'>I design products & services</p>
-                            <p className='message'>For fun, I give talks & workshops</p>
-                            <p className='message'>and bake cheesecakes 🍰</p>
+                        <div className='right-content'>
+                            <img className='portrait' src={portrait} alt='Picture of Albina Cholak'/>
+                            <div className='messages flex column'>
+                                <p className='message'>Welcome 👋</p>
+                                <p className='message'>My name is Albina Cholak</p>
+                                <p className='message'>I design products & services</p>
+                                <p className='message'>For fun, I give talks & workshops</p>
+                                <p className='message'>and bake cheesecakes 🍰</p>
+                            </div>
                         </div>
                     </div>
                     <div className='left flex column center'>

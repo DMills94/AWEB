@@ -29,9 +29,13 @@ h1 {
 h2 {
 	font-family: $avenir;
 	font-size: 40px;
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 60px;
 	margin: 0;
+
+	&.bold {
+		font-weight: 600;
+	}
 }
 
 h4 {

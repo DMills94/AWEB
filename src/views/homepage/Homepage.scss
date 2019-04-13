@@ -84,25 +84,54 @@ h1 {
     }
 
     .right {
+        align-items: center;
         height: 100vh;
         position: relative;
         width: 600px;
-        align-items: center;
+
+        .right-content {
+            position: relative;
+        }
 
         .messages {
-            justify-content: flex-end;
             align-items: flex-end;
-            height: 140px;
-            position: relative;
-            left: 125px;
+            left: 18%;
+            position: absolute;
+            top: 70%;
+            width: 100%;
 
             .message {
                 background-color: $white;
                 border-radius: 20px;
                 border: 1px solid $borderPink;
+                height: 42px;
                 margin-bottom: 12px;
                 padding: 8px 18px;
+                position: relative;
+                display: none;
+                transition: all 1s ease-out;
+
+                &.animate {
+                    animation: messageAppear 1s;
+                    display: block;
+                }
             }
         }
+    }
+}
+
+@keyframes messageAppear {
+    0% {
+        opacity: 0;
+        top: 100vh;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0;
     }
 }
