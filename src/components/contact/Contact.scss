@@ -1,18 +1,19 @@
 .contact-background {
     @include background-color-opacity($black, 0.4);
+    animation-direction: reverse;
     height: 100vh;
     left: 0;
     position: fixed;
     top: 0;
     opacity: 1;
-    transition: all 0.3s ease-in-out, background-color 0.6s ease-in-out 0.3s;
-    transform: translateX(0);
+    transition: background-color 0.6s ease-in-out 0.3s;
     width: 100vw;
     z-index: 2;
 
     &.dis-n {
         background-color: transparent;
-        transform: translateX(-100%);
+        left: 150vw;
+        transition: left 0s ease-in-out 0.9s, background-color 0.6s ease-in-out 0.3s;
     }
 }
 
@@ -21,8 +22,9 @@
     border-right: 1px solid $borderPink;
     color: $textBlack;
     height: 100vh;
+    left: 0;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    transition: left 0.3s ease-in-out;
     width: 50%;
 
     @include tablet {
@@ -30,7 +32,7 @@
     }
 
     &.dis-n {
-        transform: translateX(-100%);
+        left: -50%;
     }
 
     .small-logo-wrap {
