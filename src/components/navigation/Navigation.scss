@@ -1,0 +1,23 @@
+.navigation {
+    justify-content: space-between;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    margin: 0 auto;
+
+    .nav-item {
+        cursor: pointer;
+        height: 64px;
+        margin: 0 16px;
+        padding: 0 16px;
+
+        a {
+            text-decoration: none;
+        }
+
+        &.active {
+            border-bottom: 2px solid $blue;
+        }
+    }
+}

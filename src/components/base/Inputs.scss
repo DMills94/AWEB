@@ -1,0 +1,55 @@
+.input-wrap {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    width: 50%;
+
+    input, select, textarea {
+        background-color: $white;
+        border-radius: 4px;
+        border: 1px solid $pink;
+        padding: 0 16px;
+        transition: all 0.3s ease-in-out;
+
+        &.focus {
+            border: 1px solid $darkBlue;
+        }
+    }
+
+    input[type='text'] {
+        height: 64px;
+    }
+
+    textarea {
+        min-height: 370px;
+        padding-top: 21px;
+    }
+
+    .label {
+        cursor: text;
+        font-size: 18px;
+        left: 16px;
+        position: absolute;
+        top: 17px;
+        transition: all 0.3s ease-out;
+        border-radius: 4px;
+        padding: 4px;
+
+        &.content {
+            border: 1px solid $pink;
+            background-color: $background;
+            font-size: 12px;
+            top: -10px;
+        }
+
+        &.focus {
+            background-color: $white;
+            border: 1px solid $darkBlue;
+            border-radius: 4px;
+            font-size: 12px;
+            padding: 4px;
+            top: -10px;
+        }
+    }
+}

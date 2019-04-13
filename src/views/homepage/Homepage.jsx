@@ -37,7 +37,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     <div className='left flex column center'>
-                        <div classNane='menu-item'>
+                        <div className='menu-item'>
                             <NavLink
                                 to='/about'
                                 activeClassName='h1'
