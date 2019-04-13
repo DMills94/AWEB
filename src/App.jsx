@@ -16,18 +16,25 @@ class App extends Component {
         showContact: false
     }
 
+    toggleContact = event => {
+        if (event.target === event.currentTarget)
+        this.setState((prevState) => ({
+            showContact: !prevState.showContact
+        }))
+    }
+
     render() {
         return (
             <div className='background'>
                 <BrowserRouter>
-                    <Header />
+                    <Header toggleContact={(event) => this.toggleContact(event)}/>
                     <Switch>
                         <Route path='/' component={Homepage} exact />
                         <Route path='/about' component={About} />
                         <Route component={Page404} />
                     </Switch>
                     <Footer />
-                    <Contact show={this.state.showContact} />
+                    <Contact show={this.state.showContact} toggleModal={event => this.toggleContact(event)} />
                 </BrowserRouter>
             </div>
         )

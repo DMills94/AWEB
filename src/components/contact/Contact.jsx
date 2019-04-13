@@ -1,31 +1,84 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-//Styles
+// Components
+import TextInput from '../base/text-input/TextInput.jsx'
+import TextArea from '../base/text-area/TextArea.jsx'
+
+// Styles
 import './Contact.scss'
 
-export default function Contact(props) {
-	const display = props.display
-		? ''
-		: ' dis-n'
+// Assets
+import close from '../../assets/icons/simple-close.svg'
+import smallLogo from '../../assets/icons/small-logo.svg'
 
-	return (
-		<div className={'contact-background flex center' + display}>
-			<div className='contact-modal'>
-				<h2>Want to get in touch?</h2>
-				<div className='contact-wrap flex column align-h'>
-					<p>I'm on social media</p>
-					<div className='social-media-wrap flex'>
-						<a href='https://linkedin.com'>LinkedIn</a>
-						<a href='https://twitter.com'>Twitter</a>
-						<a href='https://facebook.com'>Facebook</a>
-						<a href='https://instagram.com'>Instagram</a>
+class Contact extends Component {
+	state = {
+		name: '',
+		email: '',
+		message: ''
+	}
+
+	handleInputChange = event => {
+		const value = event.target.value
+		const name = event.target.name
+
+		this.setState({
+			[name]: value
+		})
+	}
+
+	submitForm = () => {
+		//Submit the form.... somehow
+	}
+
+	render() {
+		const display = this.props.show
+			? ''
+			: ' dis-n'
+
+		return (
+			<div className={'contact-background' + display} onClick={this.props.toggleModal}>
+				<div className={'contact-modal flex center' + display}>
+					<div className='small-logo-wrap'>
+						<img className='small-logo' src={smallLogo}></img>
 					</div>
-					<p>Or send me an email:</p>
-					<a href='mailto:hello@albinacholak.com'>
-						hello@albinacholak.com
-					</a>
+					<img src={close} onClick={this.props.toggleModal} className='close' alt="X"/>
+					<section className='contact-body'>
+						<h2>Say hello! 📱</h2>
+						<p>Email <a href="mailto:hello@albinacholak.com">hello@albinacholak.com</a></p>
+						<p>Or fill out this form:</p>
+						<form
+							onSubmit={() => this.submitForm()}
+						>
+							<TextInput
+								label='Your name'
+								value={this.state.name}
+								name='name'
+								handleChange={event => this.handleInputChange(event)}
+							/>
+							<TextInput
+								label='Your email'
+								value={this.state.email}
+								name='email'
+								handleChange={event => this.handleInputChange(event)}
+							/>
+							<TextArea
+								label='Your message'
+								value={this.state.message}
+								name='message'
+								handleChange={event => this.handleInputChange(event)}
+							/>
+							<button
+								type='submit'
+							>
+								Send
+							</button>
+						</form>
+					</section>
 				</div>
 			</div>
-		</div>
-	)
+		)
+	}
 }
+
+export default Contact

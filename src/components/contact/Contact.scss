@@ -1,45 +1,70 @@
 .contact-background {
-    @include background-color-opacity($white, 0.3);
+    @include background-color-opacity($black, 0.4);
     height: 100vh;
     left: 0;
     position: fixed;
     top: 0;
+    opacity: 1;
+    transition: all 0.3s ease-in-out, background-color 0.6s ease-in-out 0.3s;
+    transform: translateX(0);
     width: 100vw;
-    z-index: 1000;
+    z-index: 2;
 
     &.dis-n {
-        display: none;
+        background-color: transparent;
+        transform: translateX(-100%);
     }
 }
 
 .contact-modal {
-    background-color: $blue;
-    border-top: 2px solid $borderPink;
-    color: $white;
-    padding: 32px 0 52px;
-    text-align: center;
-    width: 40%;
+    background-color: $background;
+    border-right: 1px solid $borderPink;
+    color: $textBlack;
+    height: 100vh;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
 
-    .contact-wrap {
-        border: 0;
-        padding: 0;
-    }
-
-    .social-media-wrap {
-        justify-content: space-around;
-        margin: 0;
+    @include tablet {
         width: 100%;
     }
 
-    a {
-        color: $background;
-
-        &:hover {
-            color: $borderPink;
-        }
+    &.dis-n {
+        transform: translateX(-100%);
     }
+
+    .small-logo-wrap {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .close {
+        cursor: pointer;
+        position: absolute;
+        top: 24px;
+        right: 24px;
+    }
+}
+
+.contact-body {
+    width: 100%;
+    text-align: center;
 
     p {
         margin: 16px 0;
+    }
+
+    input, textarea {
+        margin-bottom: 32px;
+    }
+
+    button {
+        background-color: $blue;
+        border-radius: 4px;
+        border: 1px solid $blue;
+        color: $textWhite;
+        height: 62px;
+        width: 50%;
     }
 }

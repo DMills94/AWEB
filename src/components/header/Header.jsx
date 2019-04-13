@@ -7,13 +7,13 @@ import smallLogo from '../../assets/icons/small-logo.svg'
 //Styles
 import './Header.scss'
 
-const Header = () => {
+const Header = props => {
     return (
         <div className="header flex align-v">
-            <NavLink to='/' className='small-logo-wrap'>
+            <NavLink to='/' activeClassName='small-logo-wrap'>
                 <img className='small-logo' src={smallLogo}></img>
             </NavLink>
-            <p className='talk'>
+            <p className='talk' onClick={props.toggleContact}>
                 LET'S TALK
             </p>
         </div>
