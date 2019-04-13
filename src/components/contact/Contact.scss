@@ -27,10 +27,6 @@
     transition: left 0.3s ease-in-out;
     width: 50%;
 
-    @include tablet {
-        width: 100%;
-    }
-
     &.dis-n {
         left: -50%;
     }
@@ -46,6 +42,14 @@
         position: absolute;
         top: 24px;
         right: 24px;
+    }
+
+    @include tablet {
+        width: 100%;
+
+        &.dis-n {
+            left: -100%;
+        }
     }
 }
 
