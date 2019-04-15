@@ -51,6 +51,7 @@ const Homepage = () => {
                     <div className='left flex column center'>
                         <div className='menu-item'>
                             <NavLink
+                                className='h1'
                                 to='/about'
                             >
                                 About
@@ -58,8 +59,9 @@ const Homepage = () => {
                         </div>
                         <div className='menu-item disabled'>
                             <NavLink
-                                exact
+                                className='h1'
                                 to='/'
+                                exact
                             >
                                 Portfolio
                             </NavLink>
@@ -67,8 +69,9 @@ const Homepage = () => {
                         </div>
                         <div className='menu-item disabled'>
                             <NavLink
-                                exact
+                                className='h1'
                                 to='/'
+                                exact
                             >
                                 Insights
                             </NavLink>

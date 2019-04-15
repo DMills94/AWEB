@@ -9,12 +9,12 @@
     top: 0;
     transition: background-color 0.6s ease-in-out 0.3s;
     width: 100vw;
-    z-index: 2;
+    z-index: 10;
 
     &.dis-n {
         background-color: transparent;
         left: 1000vw;
-        transition: left 0s ease-in-out 0.9s, background-color 0.6s ease-in-out 0.3s;
+        transition: left 0s ease-in-out 0.3s, background-color 0.3s ease-in-out;
     }
 }
 
@@ -35,7 +35,7 @@
 
     .small-logo-wrap {
         left: 0;
-        position: fixed;
+        position: absolute;
         top: 0;
     }
 

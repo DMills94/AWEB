@@ -6,15 +6,29 @@ import './Navigation.scss'
 const Navigation = (props) => {
     return (
         <nav className='navigation flex align-v'>
-            <div className={props.active === 'about' ? 'nav-item flex center active' : 'nav-item flex center'}>
-                <NavLink to='/about'>About</NavLink>
-            </div>
-            <div className={props.active === 'portfolio' ? 'nav-item flex center active' : 'nav-item flex center'}>
-                <NavLink to='/portfolio'>Portfolio</NavLink>
-            </div>
-            <div className={props.active === 'articles' ? 'nav-item flex center active' : 'nav-item flex center'}>
-                <NavLink to='/articles'>Articles</NavLink>
-            </div>
+            <NavLink
+                activeClassName='active'
+                className='nav-link'
+                to='/about'
+            >
+                About
+            </NavLink>
+            <NavLink
+                activeClassName='active'
+                className='nav-link'
+                to='/portfolio'
+                exact
+            >
+                Portfolio
+            </NavLink>
+            <NavLink
+                activeClassName='active'
+                className='nav-link'
+                to='/articles'
+                exact
+            >
+                Articles
+            </NavLink>
         </nav>
     )
 }
