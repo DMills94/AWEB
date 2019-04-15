@@ -21,13 +21,11 @@ h1 {
 #letterA {
     background-image: url('../../assets/icons/letter-A.svg');
     background-position: top right;
-    will-change: transform;
 }
 
 #letterC {
     background-image: url('../../assets/icons/letter-C.svg');
     background-position: bottom left;
-    will-change: transform;
 }
 
 // Content
@@ -46,8 +44,8 @@ h1 {
         
         .menu-item {
             margin: 46px 0;
-            width: 100%;
             position: relative;
+            width: 100%;
 
             .coming {
                 color: $pink;
@@ -74,8 +72,8 @@ h1 {
                 font-family: $libreBaskerville;
                 font-size: 70px;
                 font-weight: 400;
-                transition: all 0.2s ease-in-out;
                 text-decoration: none;
+                transition: all 0.2s ease-in-out;
             }
         }
     }
@@ -97,17 +95,17 @@ h1 {
             align-items: flex-end;
             left: 18%;
             position: absolute;
-            top: 70%;
+            top: 60%;
             width: 100%;
 
             .message {
                 background-color: $white;
                 border-radius: 20px;
                 border: 1px solid $borderPink;
+                display: none;
                 margin-bottom: 12px;
                 padding: 8px 18px;
                 position: relative;
-                display: none;
                 transition: all 1s ease-out;
 
                 &.animate {
@@ -133,8 +131,8 @@ h1 {
     }
 
     @include tablet {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
         justify-content: space-between;
         padding-top: 100px;
         
