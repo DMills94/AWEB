@@ -1,10 +1,10 @@
 .navigation {
     justify-content: space-between;
-    top: 60px;
     left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
     margin: 0 auto;
+    position: absolute;
+    top: 60px;
+    transform: translateX(-50%);
 
     .nav-item {
         cursor: pointer;
