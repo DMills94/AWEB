@@ -24,11 +24,11 @@
         z-index: 1;
 
         &.blur {
-            filter: blur(5px);
+            filter: blur(8px);
             height: 100%;
             left: 22px;
             position: absolute;
-            top: 10px;
+            top: 8px;
             width: calc(100% - 44px);
             z-index: 0;
         }
