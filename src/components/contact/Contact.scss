@@ -22,27 +22,21 @@
     background-color: $background;
     border-right: 1px solid $borderPink;
     color: $textBlack;
-    left: 0;
     min-height: 100vh;
     padding: 64px 0;
-    position: relative;
-    transition: left 0.3s ease-in-out;
+    position: absolute;
+    right: 0;
+    transition: right 0.3s ease-in-out;
     width: 50%;
 
     &.dis-n {
-        left: -50%;
-    }
-
-    .small-logo-wrap {
-        left: 0;
-        position: absolute;
-        top: 0;
+        right: -50%;
     }
 
     .close {
         cursor: pointer;
         position: absolute;
-        right: 24px;
+        right: 80px;
         top: 24px;
     }
 
@@ -60,7 +54,7 @@
     width: 100%;
 
     p {
-        margin: 16px 0;
+        margin: 16px 0 32px;
     }
 
     input, textarea {
