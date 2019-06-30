@@ -38,7 +38,7 @@ class Contact extends Component {
 
 		return (
 			<div className={'contact-background' + display} onClick={this.props.toggleModal}>
-				<div className={'contact-modal flex center' + display}>
+				<div className={'contact-modal flex centre' + display}>
 					<img src={close} onClick={this.props.toggleModal} className='close' alt="X"/>
 					<section className='contact-body'>
 						<h2 className='bold'>Say hello! 👋</h2>

@@ -1,8 +1,5 @@
 import React from 'react'
 
-// Components
-import Navigation from '../../components/navigation/Navigation.jsx';
-
 // Assets
 import shape from '../../assets/icons/2rectangles.svg'
 import aboutHeader from '../../assets/images/about-header.png'
@@ -13,7 +10,6 @@ import './About.scss'
  const About = () => {
     return (
         <section className='about flex column align-v'>
-            <Navigation active='about' />
             <div style={{ position: 'relative' }}>
                 <h2 >Albina Cholak</h2>
                 <img src={shape} className='name-icon' />

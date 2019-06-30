@@ -40,15 +40,15 @@ const Homepage = () => {
                         <div className='right-content'>
                             <img className='portrait' src={portrait} alt='Picture of Albina Cholak'/>
                             <div className='messages flex column'>
-                                <p className='message flex center'>Welcome 👋</p>
-                                <p className='message flex center'>My name is Albina Cholak</p>
-                                <p className='message flex center'>I design products & services</p>
-                                <p className='message flex center'>For fun, I give talks & workshops</p>
-                                <p className='message flex center'>and bake cheesecakes 🍰</p>
+                                <p className='message flex centre'>Welcome 👋</p>
+                                <p className='message flex centre'>My name is Albina Cholak</p>
+                                <p className='message flex centre'>I design products & services</p>
+                                <p className='message flex centre'>For fun, I give talks & workshops</p>
+                                <p className='message flex centre'>and bake cheesecakes 🍰</p>
                             </div>
                         </div>
                     </div>
-                    <div className='left flex column center'>
+                    <div className='left flex column centre'>
                         <div className='menu-item'>
                             <NavLink
                                 className='h1'
