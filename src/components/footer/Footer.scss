@@ -1,25 +1,29 @@
 .footer {
-    border-top: 1px solid $borderPink;
-    height: 150px;
-    justify-content: space-between;
+    background-color: #172B54;
+    height: 215px;
+    justify-content: flex-end;
 
     .contact-wrap {
-        box-sizing: border-box;
-        flex-grow: 1;
-        padding-left: 15%;
+        align-items: flex-end;
+        background-color: $textDarkBlue;
+        height: 100%;
+        padding-right: 5%;
+        width: calc(100% - 200px);
         
         .social-media-wrap {
-            justify-content: space-between;
-            margin-top: 16px;
-            width: 443px;
+            justify-content: flex-end;
+
+            .icon {
+                margin: 22px 0 0 25px;
+                height: 16px;
+                width: 16px;
+            }
         }
     }
 
     .email {
-        color: $textBlue;
-        font-size: 24px;
-        font-weight: 600;
-        margin-right: 80px;
+        color: $textWhite;
+        font-size: 32px;
         text-decoration: none;
     }
 }
