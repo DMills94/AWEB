@@ -8,16 +8,18 @@ import smallLogo from '../../assets/icons/small-logo.svg'
 import './Header.scss'
 
 const Header = props => {
-    return (
-        <div className="header flex align-v">
-            <NavLink to='/' activeClassName='small-logo-wrap'>
-                <img className='small-logo' src={smallLogo}></img>
-            </NavLink>
-            <p className='talk' onClick={props.toggleContact}>
-                LET'S TALK
-            </p>
-        </div>
-    )
+	return (
+		<header className='header flex align-v'>
+			<div>
+				<NavLink to='/' className='logo'>
+					/ Albina Cholak
+				</NavLink>
+			</div>
+			<p className='talk' onClick={props.toggleContact}>
+				LET'S TALK
+			</p>
+		</header>
+	)
 }
 
 export default Header

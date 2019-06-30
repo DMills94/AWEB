@@ -1,34 +1,27 @@
 .header {
-    height: 60px;
+    height: 106px;
     justify-content: space-between;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
-}
 
-.small-logo-wrap {
-    background-color: $blue;
-    height: 60px;
-    position: relative;
-    width: 85px;
-    
-    a {
-        height: 100%;
-        width: 100%;
+    .logo {
+        color: $textDarkBlue;
+        font-weight: 600;
+        margin-left: 48px;
+        position: relative;
+        
+        a {
+            height: 100%;
+            width: 100%;
+        }
     }
 
-	.small-logo {
-        height: 20px;
-        left: 55%;
-        position: relative;
-        top: 50%;
-	}
-}
-
-.talk {
-    cursor: pointer;
-    font-weight: 600;
-    margin-right: 80px;
-    text-decoration: none;
+    .talk {
+        cursor: pointer;
+        font-weight: 600;
+        margin-right: 80px;
+        text-decoration: none;
+    }
 }
