@@ -1,0 +1,81 @@
+.about {
+    margin: 0 auto;
+    max-width: 1110px;
+    min-height: 100vh;
+    padding: 200px 32px 100px;
+
+    .name-icon {
+        left: 50%;
+        opacity: 0.1;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .subtitle {
+        margin-bottom: 56px;
+        max-width: 800px;
+    }
+
+    .about-header {
+        padding-bottom: 80px;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+
+        &.blur {
+            filter: blur(8px);
+            height: 100%;
+            left: 22px;
+            position: absolute;
+            top: 8px;
+            width: calc(100% - 44px);
+            z-index: 0;
+        }
+    }
+
+    .what-i-do {
+        border: 1px solid $brown;
+        margin: 72px 0;
+        width: 100%;
+
+        .box {
+            border-bottom: 1px solid $brown;
+            height: 330px;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+
+            div {
+                padding: 0 44px 0 88px;
+                width: 50%;
+            }
+
+            p {
+                margin-bottom: 24px;
+            }
+
+            @include tablet {
+                height: auto;
+
+                div {
+                    padding: 22px 22px 0 44px;
+                }
+            }
+
+            @include phone {
+                flex-direction: column;
+
+                div {
+                    padding: 0;
+                    width: 80%;
+
+                    h2 {
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
