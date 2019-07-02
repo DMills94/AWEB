@@ -1,28 +1,27 @@
 .homepage {
     overflow: hidden;
     position: relative;
-    margin-top: 96px;
-}
 
-// Content
-.content-wrap {
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 1110px;
-    min-height: calc(100vh - 96px);
-    padding: 0 40px;
-
-    .portrait {
-        height: 100%;
-        width: 100%;
-    }
-
-    @include tablet {
+    // Content
+    .content-wrap {
         align-items: center;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-top: 100px;
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        margin: 0 auto;
+        max-width: 1110px;
+        min-height: calc(100vh - 96px);
+        padding: 0 40px;
+
+        .portrait {
+            height: 100%;
+            width: 100%;
+        }
+
+        @include tablet {
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 100px;
+        }
     }
 }

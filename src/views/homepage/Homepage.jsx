@@ -9,7 +9,7 @@ import './Homepage.scss'
 const Homepage = () => {
     return (
         <section className='homepage'>
-            <div className='content-wrap flex'>
+            <div className='container content-wrap flex'>
                 <div className='right'>
                     <img src={portrait} alt=''/>
                 </div>

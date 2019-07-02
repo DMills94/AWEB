@@ -39,10 +39,10 @@ class Contact extends Component {
 		return (
 			<div className={'contact-background' + display} onClick={this.props.toggleModal}>
 				<div className={'contact-modal flex centre' + display}>
-					<img src={close} onClick={this.props.toggleModal} className='close' alt="X"/>
+					<img src={close} onClick={this.props.toggleModal} className='close' alt='X'/>
 					<section className='contact-body'>
 						<h2 className='bold'>Say hello! 👋</h2>
-						<p>Email <a href="mailto:hello@albinacholak.com">hello@albinacholak.com</a><br />
+						<p>Email <a href='mailto:hello@albinacholak.com'>hello@albinacholak.com</a><br />
 						Or fill out this form:</p>
 						<form
 							onSubmit={() => this.submitForm()}
