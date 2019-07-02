@@ -25,9 +25,9 @@ __
 ### 1. Front End
 
 
-| Framework    |Styling      |Package manager  |
-|--------------|-------------|-----------------|
-| React 16.8.3 | SCSS        | [pnpm](https://github.com/pnpm/pnpm)|
+| Framework    |Styling      |
+|--------------|-------------|
+| React 16.8.3 | SCSS        |
 
 **Requirements**
 
