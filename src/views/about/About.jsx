@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 // Assets
-import CV from '../../assets/icons/CV.svg'
+import CV from '../../assets/icons/cv.svg'
 import aboutPortrait from '../../assets/images/about-portrait.png'
 import abstract from '../../assets/icons/abstract.svg'
 import miro from '../../assets/icons/miro.svg'
