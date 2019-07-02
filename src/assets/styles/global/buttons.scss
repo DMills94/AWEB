@@ -1,0 +1,13 @@
+.btn {
+    align-items: center;
+    background-color: $peachBeach;
+    border-radius: 2px;
+    border: 1px solid $textDarkBlue;
+    color: $textDarkBlue;
+    display: flex;
+    padding: 16px;
+
+    img {
+        margin-right: 14px;
+    }
+}

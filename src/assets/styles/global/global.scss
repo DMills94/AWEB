@@ -8,10 +8,12 @@
 
 .background {
 	height: 100%;
+    margin-top: 96px;
 	width: 100%;
 }
 
 .container {
+	margin: 0 auto;
 	max-width: 1110px;
 	position: relative;
 }
@@ -27,14 +29,18 @@ h1 {
 
 h2 {
 	font-family: $avenir;
-	font-size: 40px;
+	font-size: 32px;
 	font-weight: 400;
-	line-height: 60px;
-	margin: 0;
+	line-height: 44px;
+	margin: 0 0 32px;
+}
 
-	&.bold {
-		font-weight: 600;
-	}
+h3 {
+	font-family: $avenir;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 33px;
+	margin: 0 0 32px;
 }
 
 h4 {
@@ -64,16 +70,17 @@ p {
 	font-family: $avenir;
 	font-size: 18px;
 	font-weight: 400;
-	line-height: 24px;
+	line-height: 27px;
 	margin: 0;
 
 	&.small {
 		font-size: 16px;
+		line-height: 24px;
 	}
+}
 
-	&.bold {
-		font-weight: 600;
-	}
+.bold {
+	font-weight: 600;
 }
 
 .txt-white {

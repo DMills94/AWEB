@@ -1,0 +1,123 @@
+.about {
+    padding: 98px 0;
+
+    h2 {
+        color: $textDarkBlue;
+    }
+
+    .intro {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        margin-bottom: 130px;
+
+        p {
+            margin-bottom: 32px;
+        }
+
+        button {
+            margin-top: 22px;
+        }
+    }
+
+    .title {
+        margin-bottom: 52px;
+        text-align: center;
+    }
+
+    .values {
+        margin-bottom: 100px;
+
+        .items-wrap {
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .item {
+            padding: 20px;
+            width: 216px;
+            height: 216px;
+            
+            .sub-title {
+                margin: 10px 0 8px;
+            }
+
+            &:hover {
+                box-shadow: 0 3px 5px 0.11px #E4E4E4 ;
+            }
+        }
+    }
+
+    .growth {
+        margin-bottom: 100px;
+
+        .items-wrap {
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .item {
+            background-color: $peachBeach;
+            height: 340px;
+            margin-bottom: 16px;
+            padding: 60px 0 0 80px;
+            width: calc(50% - 12px);
+
+            .text {
+                margin: 24px 0 16px;
+                max-width: 280px;
+            }
+
+            .link {
+                background-color: $textDarkBlue;
+                color: $white;
+                cursor: pointer;
+                padding: 0 8px;
+                width: intrinsic;
+                width: -moz-max-content;
+                width: -webkit-max-content;
+                
+                img {
+                    margin-right: 12px;
+                }
+            }
+        }
+    }
+
+    .design {
+        border: 1px solid $pink;
+        border-radius: 2px;
+        height: 292px;
+        margin-bottom: 44px;
+        width: 100%;
+
+        .items-wrap {
+            justify-content: space-between;
+            margin-top: 12px;
+            width: 60%;
+        }
+    }
+
+    .instagram {
+        margin: 0 auto;
+        width: 70%;
+
+        h2 {
+            margin-bottom: 0;
+        }
+        
+        a {
+            color: $black;
+        }
+
+        .items-wrap {
+            height: 170px;
+            justify-content: space-between;
+            margin-top: 44px;
+
+            img {
+                height: 170px;
+                width: 170px;
+            }
+        }
+    }
+}
