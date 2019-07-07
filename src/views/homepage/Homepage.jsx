@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // Assets
 import portrait from '../../assets/images/portrait.png'
@@ -19,7 +20,7 @@ const Homepage = () => {
                         and I help businesses to grow
                     </h1>
                     <p>
-                        as a Lead Product Designer, I craft <a href=''>digital</a> and <a href=''>physical</a> experiences, give <a href=''>talks</a> and share design insights in my <a href=''>blog</a>.
+                        as a Lead Product Designer, I craft <a href=''>digital</a> and <a href=''>physical</a> experiences, give <a href=''>talks</a> and share design insights in my <Link to='/blog'>blog</Link>.
                     </p>
                 </div>
             </div>
