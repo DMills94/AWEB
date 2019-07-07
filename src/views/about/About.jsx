@@ -41,39 +41,40 @@ const valuesItems = [
     }
 ]
 
+// In Text use \n to indicate a new line
 const growthItems = [
     {
-        title: 'Manage design processes',
-        text: 'Building a culture of innovation.',
+        title: 'Design process & strategy',
+        text: 'Building a culture of innovation in Agile product development.\nConsistent design process that puts customer at the centre.',
         href: '/about',
         linkText: 'Request a consultation'
     },
     {
-        title: 'Design digital products',
+        title: 'Product design (UX/UI)',
         text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
         href: '/about',
         linkText: 'Request product design'
     },
     {
-        title: 'Design services',
-        text: 'Explicitely documented scenarios customer segments cost-benefit analyses design process.',
+        title: 'UX research',
+        text: 'Explicitely documented scenarios customer segmentscost-benefit analyses design process',
         href: '/about',
         linkText: 'Request service design'
     },
     {
-        title: 'Facilitate workshops',
-        text: 'Explicitely documented scenarios customer segmentscost-benefit analyses design process.',
+        title: 'Service design',
+        text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
         href: '/about',
         linkText: 'Hire me to run a workshop'
     },
     {
-        title: 'Growing designers',
-        text: 'Explicitely documented scenarios customer segmentscost-benefit analyses design process.',
+        title: 'Design management',
+        text: 'Growing designers\nFostering a culture of innovation',
         href: '/about',
         linkText: 'Get a private consultation'
     },
     {
-        title: 'Public presentations',
+        title: 'Talks & workshops',
         text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
         href: '/about',
         linkText: 'Hire me to give a talk'
@@ -106,11 +107,9 @@ const About = () => {
                 <div className='intro flex align-v'>
                     <div className='right'>
                         <h2>
-                            <span className='bold'>
                             Hello 😉<br />
                             I'm Albina Cholak,<br />
                             a Lead Product Designer.
-                            </span>
                         </h2>
                         <p>
                         I’m driven by business outcomes, in love with technical possibilities and empowered with the best design tools & methods to create experinces people love ❤️<br />
@@ -137,9 +136,7 @@ const About = () => {
                             </a>
                         </div>
                     </div>
-                    <div className='left'>
-                        <img src={aboutPortrait} alt='' />
-                    </div>
+                    <img className='portrait' src={aboutPortrait} alt='' />
                 </div>
 
                 <div className='values'>
@@ -186,12 +183,12 @@ const About = () => {
 
                 <div className='feeds flex'>
                     <div className='feed-item flex column'>
-                        <p>Medium<br />
-                        I share my knowledge on my Medium blog</p>
+                        <p className='sub-title'>Medium</p>
+                        <p>I share my knowledge on my Medium blog</p>
                     </div>
                     <div className='feed-item flex column'>
-                        <p>Telegram<br />
-                        I share useful resources & materials in my Telegram channel.</p>
+                        <p className='sub-title'>Telegram</p>
+                        <p>I share useful resources & materials in my Telegram channel.</p>
                     </div>
                 </div>
 
