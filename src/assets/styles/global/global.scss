@@ -20,6 +20,7 @@
 
 //FONTS
 h1 {
+	color: $blue;
 	font-family: $avenir;
 	font-size: 48px;
 	font-weight: 600;
@@ -32,7 +33,7 @@ h2 {
 	font-size: 32px;
 	font-weight: 400;
 	line-height: 44px;
-	margin: 0 0 32px;
+	margin: 0;
 }
 
 h3 {
@@ -40,14 +41,14 @@ h3 {
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 33px;
-	margin: 0 0 32px;
+	margin: 0;
 }
 
 h4 {
 	font-family: $avenir;
 	font-size: 18px;
 	line-height: 18px;
-	margin: 0 0 8px;
+	margin: 0;
 }
 
 a {
