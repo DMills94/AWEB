@@ -9,24 +9,27 @@ class Header extends Component {
 	/**
 	 * Hide or show the slider div depending on if the user has hovered the navigation bar
 	 */
-	toggleSlider = () => {
-		console.log('toggle')
+	showSlider= () => {
+		const slider = document.querySelector('.slider')
+
+		slider.style.transition = 'width 0.1s ease'
+
+		setTimeout(() => {
+			slider.style.transition = 'left 0.3s ease, width 0.1s ease'
+		}, 300);
+		slider.classList.add('view')
+	}
+
+	hideSlider = () => {
 		const slider = document.querySelector('.slider')
 		
-		if (slider.classList.contains('view')) {
-			slider.style.width = '0'
-			setTimeout(() => {
+		slider.style.width = '0'
 
-				console.log(slider)
-				console.log(slider.offsetWidth)
-				if (slider.offsetWidth === 0) { // If user has unhovered and rehovered, don't disable
-					slider.classList.remove('view')
-					slider.style.transition = ''
-				}
-			}, 300)
-		}
-		else
-			slider.classList.add('view')
+		// Don't remove the colour until animation is finished
+		setTimeout(() => {
+			slider.classList.remove('view')
+			slider.style.transition = ''
+		}, 300)
 	}
 
 	/**
@@ -48,9 +51,8 @@ class Header extends Component {
 		
 		if (slider.classList.contains('view')) {
 			selectedNavItem.style.color = '#fff'
+
 			slider.style.left = `${left}px`
-			
-			slider.style.transition = 'left 0.3s ease, width 0.1s ease'
 			slider.style.width = `${selectedNavItem.offsetWidth}px`
 		}
 	}
@@ -75,8 +77,8 @@ class Header extends Component {
 				</div>
 				<nav
 					className='flex'
-					onMouseEnter={() => this.toggleSlider()}
-					onMouseLeave={() => this.toggleSlider()}
+					onMouseEnter={() => this.showSlider()}
+					onMouseLeave={() => this.hideSlider()}
 				>
 					<div className='slider'></div>
 					<Link

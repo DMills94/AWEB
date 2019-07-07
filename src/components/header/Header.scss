@@ -22,7 +22,7 @@
     
     nav {
         height: 100%;
-        min-width: 33%;
+        min-width: 688px;
         position: relative;
 
         .nav-item {
@@ -38,16 +38,13 @@
 
         .slider {
             background-color: $blue;
-            display: none;
+            height: 100%;
             position: absolute;
             transition: none;
             width: 0;
             z-index: 2;
 
             &.view {
-                display: block;
-                position: absolute;
-                height: 100%;
                 left: 0;
             }
         }
