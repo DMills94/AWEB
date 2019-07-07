@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 // Pages
 import Homepage from './views/homepage/Homepage.jsx'
 import About from './views/about/About.jsx'
+import Portfolio from './views/portfolio/Portfolio.jsx'
 import Page404 from './views/404/404.jsx'
 
 //Components
@@ -31,6 +32,7 @@ class App extends Component {
                     <Switch>
                         <Route path='/' component={Homepage} exact />
                         <Route path='/about' component={About} />
+                        <Route path='/portfolio' component={Portfolio} />
                         <Route component={Page404} />
                     </Switch>
                     <Footer />
