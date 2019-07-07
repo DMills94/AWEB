@@ -167,7 +167,7 @@ const About = () => {
                     <a href='https://instagram.com/mindmeandsgn' target='_blank' rel='noopener noreferrer'>@MindMeanDesign</a>
                     <div className='items-wrap flex'>
                         {instaItems.map((image, i) => {
-                            return <a href={image.url} target='_blank' rel='noopener noreferrer'><img src={image.imageUrl} key={i} alt='Instagram1'/></a>
+                            return <a href={image.url} target='_blank' rel='noopener noreferrer' key={i}><img src={image.imageUrl} alt={`Instagram${i}`}/></a>
                         })}
                     </div>
                 </div>
