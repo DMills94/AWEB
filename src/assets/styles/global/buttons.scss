@@ -1,13 +1,31 @@
 .btn {
     align-items: center;
-    background-color: $peachBeach;
-    border-radius: 2px;
-    border: 1px solid $textDarkBlue;
-    color: $textDarkBlue;
+    align-items: center;
+    border-radius: 4px;
+    border: none;
     display: flex;
-    padding: 16px;
+    justify-content: center;
+    padding: 18px 13px;
 
-    img {
-        margin-right: 14px;
+    &.blue {
+        background-color: $blue;
+        color: $textWhite;
+    }
+
+    &.sky {
+        background-color: rgba(#527BCA, .5);
+        border: 1px solid #979797;
+        color: $textBlue;
+    }
+
+    &.white {
+        background-color: $white;
+        color: $textBlue;
+    }
+
+    &.icon {
+        img {
+            margin: -4px 14px 0 0;
+        }
     }
 }

@@ -1,37 +1,43 @@
 import React from 'react'
 
+// Components
+import StyledLink from '../../components/links/Links.jsx'
+
 // Assets
-import CV from '../../assets/icons/cv.svg'
-import aboutPortrait from '../../assets/images/about-portrait.png'
+import aboutPortrait from '../../assets/images/about-portrait.jpg'
 import abstract from '../../assets/icons/abstract.svg'
-import miro from '../../assets/icons/miro.svg'
-import overflow from '../../assets/icons/overflow.svg'
-import pin from '../../assets/icons/pin.svg'
-import sketch from '../../assets/icons/sketch.svg'
-import valuesOne from '../../assets/icons/value-number-1.svg'
 import insta1 from '../../assets/images/insta1.jpg'
 import insta2 from '../../assets/images/insta2.jpg'
 import insta3 from '../../assets/images/insta3.jpg'
 import insta4 from '../../assets/images/insta4.jpg'
+import linkedIn from '../../assets/icons/linkedin-blue.svg'
+import miro from '../../assets/icons/miro.svg'
+import overflow from '../../assets/icons/overflow.svg'
+import sketch from '../../assets/icons/sketch.svg'
+
 // Styles
 import './About.scss'
 
 const valuesItems = [
     {
+        icon: '🙌',
         title: 'Collaboration',
-        text: 'I belive in the power of good teamwork and right stakeholder engagement'
+        text: 'I love effective co-creation with my team and our customers utilising creative design methods.'
     },
     {
-        title: 'Collaboration',
-        text: 'I belive in the power of good teamwork and right stakeholder engagement'
+        icon: '⚡️',
+        title: 'Empowering',
+        text: 'Growing other designers,  educating stakeholders or giving talks — my passion is to share knowledge.'
     },
     {
-        title: 'Collaboration',
-        text: 'I belive in the power of good teamwork and right stakeholder engagement'
+        icon: '👶',
+        title: 'Simplification',
+        text: 'I believe in the power of good teamwork and right stakeholder engagement'
     },
     {
-        title: 'Collaboration',
-        text: 'I belive in the power of good teamwork and right stakeholder engagement'
+        icon: '💛',
+        title: 'Kindness',
+        text: 'Smile and positive attidude the only way to deliver amazing projects.'
     }
 ]
 
@@ -39,32 +45,38 @@ const growthItems = [
     {
         title: 'Manage design processes',
         text: 'Building a culture of innovation.',
-        link: 'Request a consultation'
+        href: '/about',
+        linkText: 'Request a consultation'
     },
     {
         title: 'Design digital products',
         text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
-        link: 'Request product design'
+        href: '/about',
+        linkText: 'Request product design'
     },
     {
         title: 'Design services',
         text: 'Explicitely documented scenarios customer segments cost-benefit analyses design process.',
-        link: 'Request service design'
+        href: '/about',
+        linkText: 'Request service design'
     },
     {
         title: 'Facilitate workshops',
         text: 'Explicitely documented scenarios customer segmentscost-benefit analyses design process.',
-        link: 'Hire me to run a workshop'
+        href: '/about',
+        linkText: 'Hire me to run a workshop'
     },
     {
         title: 'Growing designers',
         text: 'Explicitely documented scenarios customer segmentscost-benefit analyses design process.',
-        link: 'Get a private consultation'
+        href: '/about',
+        linkText: 'Get a private consultation'
     },
     {
         title: 'Public presentations',
         text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
-        link: 'Hire me to give a talk'
+        href: '/about',
+        linkText: 'Hire me to give a talk'
     },
 ]
 
@@ -94,25 +106,36 @@ const About = () => {
                 <div className='intro flex align-v'>
                     <div className='right'>
                         <h2>
-                            Hello 😉
-                            <br />
                             <span className='bold'>
-                                I'm Albina Cholak,
-                                <br />a Lead Product Designer.
+                            Hello 😉<br />
+                            I'm Albina Cholak,<br />
+                            a Lead Product Designer.
                             </span>
                         </h2>
                         <p>
-                            I’m driven by business outcomes, in love
-                            <br />
-                            with technical possibilities and empowered
-                            <br />
-                            with design tools & methods.
-                        </p>
-                        <p>Currently at Octopus Labs.</p>
-                        <button className='btn resume dis-fc'>
-                            <img src={CV} alt='' />
-                            Request resume
-                        </button>
+                        I’m driven by business outcomes, in love with technical possibilities and empowered with the best design tools & methods to create experinces people love ❤️<br />
+                        <br />
+                        Currently at Octopus Labs, London</p>
+                        <div className='flex'>
+                            <a
+                                className='btn blue'
+                                download
+                                href=''
+                                style={{ width: '205px' }}
+                            >
+                                Download resume
+                            </a>
+                            <a
+                                className='btn sky icon'
+                                href='https://www.linkedin.com/in/cholak/'
+                                rel='noopener noreferrer'
+                                style={{ width: '155px' }}
+                                target='_blank'
+                            >
+                                <img src={linkedIn} alt=''/>
+                                Connect
+                            </a>
+                        </div>
                     </div>
                     <div className='left'>
                         <img src={aboutPortrait} alt='' />
@@ -120,12 +143,12 @@ const About = () => {
                 </div>
 
                 <div className='values'>
-                    <h2 className='title'>My Values</h2>
+                    <h2 className='title'>... and I'm driven by</h2>
                     <div className='items-wrap flex wrap'>
                         {valuesItems.map((item, i) => {
                             return (
                                 <div className='item' key={i}>
-                                    <img src={valuesOne} alt=''/>
+                                    <p className='emoji'>{item.icon}</p>
                                     <p className='sub-title'>{item.title}</p>
                                     <p className='small'>{item.text}</p>
                                 </div>
@@ -142,12 +165,42 @@ const About = () => {
                                 <div className='item flex column' key={i}>
                                     <h3 className='sub-title'>{item.title}</h3>
                                     <p className='text'>{item.text}</p>
-                                    <div className='link flex align-v'>
-                                        <img src={pin} alt=''/>
-                                        <p>{item.link}</p>
-                                    </div>
+                                    <StyledLink
+                                        href={item.href}
+                                        text={item.linkText}
+                                    />
                                 </div>
                             )
+                        })}
+                    </div>
+                </div>
+
+                <div className='help flex column centre'>
+                    <h3>Need my help?</h3>
+                    <a
+                        className='btn white'
+                        href='/about'
+                        style={{ width: '197px'}}
+                    >Request consultation</a>
+                </div>
+
+                <div className='feeds flex'>
+                    <div className='feed-item flex column'>
+                        <p>Medium<br />
+                        I share my knowledge on my Medium blog</p>
+                    </div>
+                    <div className='feed-item flex column'>
+                        <p>Telegram<br />
+                        I share useful resources & materials in my Telegram channel.</p>
+                    </div>
+                </div>
+
+                <div className='instagram'>
+                    <h2>My Instagram</h2>
+                    <a href='https://instagram.com/mindmeandsgn' target='_blank' rel='noopener noreferrer'>@MindMeanDesign</a>
+                    <div className='items-wrap flex'>
+                        {instaItems.map((image, i) => {
+                            return <a href={image.url} target='_blank' rel='noopener noreferrer' key={i}><img src={image.imageUrl} alt={`Instagram${i}`}/></a>
                         })}
                     </div>
                 </div>
@@ -159,16 +212,6 @@ const About = () => {
                         <img src={sketch} alt='Sketch'/>
                         <img src={overflow} alt='Overflow'/>
                         <img src={miro} alt='Miro'/>
-                    </div>
-                </div>
-
-                <div className='instagram'>
-                    <h2>My Instagram</h2>
-                    <a href='https://instagram.com/mindmeandsgn' target='_blank' rel='noopener noreferrer'>@MindMeanDesign</a>
-                    <div className='items-wrap flex'>
-                        {instaItems.map((image, i) => {
-                            return <a href={image.url} target='_blank' rel='noopener noreferrer' key={i}><img src={image.imageUrl} alt={`Instagram${i}`}/></a>
-                        })}
                     </div>
                 </div>
             </div>
