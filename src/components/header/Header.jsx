@@ -10,11 +10,15 @@ class Header extends Component {
 	 * Hide or show the slider div depending on if the user has hovered the navigation bar
 	 */
 	toggleSlider = () => {
+		console.log('toggle')
 		const slider = document.querySelector('.slider')
 		
 		if (slider.classList.contains('view')) {
 			slider.style.width = '0'
 			setTimeout(() => {
+
+				console.log(slider)
+				console.log(slider.offsetWidth)
 				if (slider.offsetWidth === 0) { // If user has unhovered and rehovered, don't disable
 					slider.classList.remove('view')
 					slider.style.transition = ''
@@ -45,11 +49,9 @@ class Header extends Component {
 		if (slider.classList.contains('view')) {
 			selectedNavItem.style.color = '#fff'
 			slider.style.left = `${left}px`
-	
-			setTimeout(() => {
-				slider.style.transition = 'left 0.3s ease, width 0.1s ease'
-				slider.style.width = `${selectedNavItem.offsetWidth}px`
-			}, 100)
+			
+			slider.style.transition = 'left 0.3s ease, width 0.1s ease'
+			slider.style.width = `${selectedNavItem.offsetWidth}px`
 		}
 	}
 
