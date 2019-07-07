@@ -1,21 +1,28 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 //Styles
 import './Header.scss'
 
-const classes = 'nav-item small flex centre'
-
-const activeStyle = {
-	backgroundPosition: '50% 0',
-	color: '#FFF',
-	backgroundImage: 'none',
-	backgroundColor: '#002D83'
-}
-
 class Header extends Component {
-	state = {
-		hoveredItem: null
+
+	/**
+	 * Hide or show the slider div depending on if the user has hovered the navigation bar
+	 */
+	toggleSlider = () => {
+		const slider = document.querySelector('.slider')
+		
+		if (slider.classList.contains('view')) {
+			slider.style.width = '0'
+			setTimeout(() => {
+				if (slider.offsetWidth === 0) { // If user has unhovered and rehovered, don't disable
+					slider.classList.remove('view')
+					slider.style.transition = ''
+				}
+			}, 300)
+		}
+		else
+			slider.classList.add('view')
 	}
 
 	/**
@@ -24,29 +31,26 @@ class Header extends Component {
 	 */
 	hoverItem = e => {
 		const navItems = document.querySelectorAll('.nav-item')
+		let left = 0
+		const selectedNavItem = e.target
 		
-		if (!this.state.hoveredItem) {
-			for (let item in navItems) {
-				if (navItems[item].id > e.target.id && !navItems[item].className.includes('active')) {
-					navItems[item].style.backgroundPosition = '100% 0'
-				}
-			}
+		for (let item in navItems) {
+			if (navItems[item].id === selectedNavItem.id)
+				break
+			left += navItems[item].offsetWidth
 		}
-		else if ((Number(e.target.id) > this.state.hoveredItem)) {
-			let prevNavItem = navItems[Number(e.target.id) - 1]
-			prevNavItem.style.backgroundPosition = '0 0'
+		
+		const slider = document.querySelector('.slider')
+		
+		if (slider.classList.contains('view')) {
+			selectedNavItem.style.color = '#fff'
+			slider.style.left = `${left}px`
+	
+			setTimeout(() => {
+				slider.style.transition = 'left 0.3s ease, width 0.1s ease'
+				slider.style.width = `${selectedNavItem.offsetWidth}px`
+			}, 100)
 		}
-		else {
-			let prevNavItem = navItems[Number(e.target.id) + 1]
-			prevNavItem.style.backgroundPosition = '100% 0'
-		}
-
-		e.target.className = classes + ' hover'
-		e.target.style.backgroundPosition = '50% 0'
-
-		this.setState({
-			hoveredItem: Number(e.target.id)
-		})
 	}
 
 	/**
@@ -54,12 +58,8 @@ class Header extends Component {
 	 * @param {obj} e event object
 	 */
 	unhoverItem = e => {
-		e.target.className = classes + ' unhover'
-		e.target.style.backgroundPosition = '0 0'
-
-		this.setState({
-			hoveredItem: null
-		})
+		const selectedNavItem = e.target
+		selectedNavItem.style.color = ''
 	}
 	
 
@@ -67,41 +67,43 @@ class Header extends Component {
 		return (
 			<header className='header flex align-v'>
 				<div>
-					<NavLink to='/' className='logo'>
+					<Link to='/' className='logo'>
 						/ Albina Cholak
-					</NavLink>
+					</Link>
 				</div>
-				<nav className='flex'>
-					<NavLink
+				<nav
+					className='flex'
+					onMouseEnter={() => this.toggleSlider()}
+					onMouseLeave={() => this.toggleSlider()}
+				>
+					<div className='slider'></div>
+					<Link
 						to='/about'
 						className='nav-item small flex centre'
-						activeStyle={activeStyle}
 						id='0'
 						onMouseEnter={e => this.hoverItem(e)}
 						onMouseLeave={e => this.unhoverItem(e)}
 					>
 						About
-					</NavLink>
-					<NavLink
+					</Link>
+					<Link
 						to='/blog'
 						className='nav-item small flex centre'
-						activeStyle={activeStyle}
 						id='1'
 						onMouseEnter={e => this.hoverItem(e)}
 						onMouseLeave={e => this.unhoverItem(e)}
 					>
 						Blog
-					</NavLink>
-					<NavLink
+					</Link>
+					<Link
 						to='/portfolio'
 						className='nav-item small flex centre'
-						activeStyle={activeStyle}
 						id='2'
 						onMouseEnter={e => this.hoverItem(e)}
 						onMouseLeave={e => this.unhoverItem(e)}
 					>
 						Portfolio
-					</NavLink>
+					</Link>
 					<a
 						className='nav-item small flex centre'
 						id='3'
