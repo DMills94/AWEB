@@ -2,12 +2,13 @@
     background-color: $peachBeach;
     border-radius: 2px;
     margin-bottom: 24px;
-    padding: 40px 58px;
+    padding: 52px 58px;
+    position: relative;
     overflow: hidden;
 
     &.wide {
         display: flex;
-        height: 266px;
+        height: 297px;
         width: 100%;
 
         .text-wrap {
@@ -21,7 +22,7 @@
     }
 
     &.small {
-        height: 277px;
+        height: 304px;
         width: calc(50% - 12px);
     }
 
@@ -30,26 +31,27 @@
         width: calc(50% - 12px);
     }
 
-    &.bg-image {
-        background-size: contain;
+    .bg-image {
+        background-size: cover;
         color: $textWhite;
-
-        .tags {
-            @include width-max-content();
-            background: $white;
-            border-radius: 2px;
-            color: $moonCookie;
-            padding: 10px 7px;
-        }
-
-        .link {
-            color: $textWhite;
-        }
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
     }
 
     .tags {
         font-weight: 600;
         margin-bottom: 20px;
+
+        .bg-image ~ & {
+            @include width-max-content();
+            background: $white;
+            border-radius: 2px;
+            color: $moonCookie;
+            padding: 8px 12px;
+        }
 
         .divide {
             height: 100%;
@@ -71,6 +73,10 @@
 
     .link {
         margin-bottom: 30px;
+
+        .bg-image ~ & {
+            color: $textWhite;
+        }
     }
 
     .image-wrap {
@@ -79,5 +85,20 @@
 
     .image {
         width: 100%;
+    }
+
+    .bg-image,
+    .text-wrap,
+    .image {
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+
+        .bg-image,
+        .text-wrap,
+        .image {
+            transform: scale(1.02)
+        }
     }
 }

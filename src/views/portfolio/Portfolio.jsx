@@ -79,7 +79,7 @@ const Portfolio = () => {
                     year='2019'
                     tag='Web design'
                     title='Born for hugs'
-                    text='An award-winning compaign for Huggies'
+                    text='Responsive UX/UI design for an award-winning campaign for Huggies'
                     href='https://www.behance.net/gallery/46609921/Born-for-Hugs'
                     linkText='Check Behance case study'
                     linkNewTab={true}

@@ -11,11 +11,15 @@ import './PortfolioCards.scss'
 
 const PortfolioCard = props => {
     const smallBg = props.type === 'small' && props.image
+
     return (
-        <div
-            className={`portfolio-card ${props.type} ${smallBg ? 'bg-image' : ''}`}
-            style={smallBg ? { backgroundImage: `url(${props.image})` } : {}}
-        >
+        <div className={`portfolio-card ${props.type}`}>
+            {smallBg && 
+                <div
+                    className='bg-image'
+                    style={smallBg ? { backgroundImage: `url(${props.image})` } : {}}
+                />
+            }
             <div className='text-wrap'>
                 <p className='tags tiny'>{props.year}<span className='divide'></span>{props.tag.toUpperCase()}</p>
                 <h2 className='bold'>{props.title}</h2>
@@ -36,7 +40,7 @@ const PortfolioCard = props => {
             </div>
 
             {props.image && !smallBg &&
-                <div className="image-wrap">
+                <div className='image-wrap'>
                     <img className='image' src={props.image} alt=''/>
                 </div>
             }
