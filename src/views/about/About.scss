@@ -133,6 +133,7 @@
     .instagram {
         @include width-max-content();
         margin-bottom: 72px;
+        text-align: center;
 
         h2 {
             margin-bottom: 0;
