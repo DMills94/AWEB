@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 // Assets
 import portrait from '../../assets/images/portrait-3x.png'
@@ -7,6 +7,7 @@ import portrait from '../../assets/images/portrait-3x.png'
 import './Homepage.scss'
 
 const Homepage = () => {
+    useEffect(() => window.scrollTo(0, 0))
     return (
         <section className='homepage flex'>
             <img className='portrait' src={portrait} alt=''/>

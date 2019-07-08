@@ -23,9 +23,11 @@ import './Portfolio.scss'
 //     tag='tag'
 //     title='title'
 //     text='text'
-//     href='/portfolio'
+//     href='url'
+//     link={true/false}
 //     linkText='click'
 //     linkNewTab={false}
+//     image={imageComponent}
 // />
 
 const Portfolio = () => {
@@ -41,8 +43,7 @@ const Portfolio = () => {
                     tag='Product design'
                     title='Octopus HUB'
                     text='The first digital platform to cross-sell all Octopus products.'
-                    href='/portfolio'
-                    linkText='Read case study'
+                    link={false}
                     image={Hub}
                 />
                 <PortfolioCard

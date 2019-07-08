@@ -12,8 +12,12 @@
     }
 
     &:hover {
-        background-color: rgba(#DFCCBE, .5);
+        @include background-colour-opacity($tigerMilk, 0.5);
         padding: 13px 16px;
+
+        &.blue {
+            background-color: $indigoPorn;
+        }
 
         p {
             font-weight: 500;

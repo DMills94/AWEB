@@ -15,11 +15,16 @@ module.exports = {
                 ]
             },
             {
-                //Image loader
-                test: /\.(jpg|png|gif|svg)$/,
+                //Image/PDF loader
+                test: /\.(pdf|jpg|png|gif|svg)$/,
                 use: [
-                    'file-loader'
-                ]
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ],
             },
             {
                 //Font loader

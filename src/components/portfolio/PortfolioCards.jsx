@@ -27,6 +27,7 @@ const PortfolioCard = props => {
                 {props.link
                     ? (
                         <StyledLink
+                            hoverColour={smallBg ? 'blue' : ''}
                             href={props.href}
                             text={props.linkText}
                             newTab={props.linkNewTab}

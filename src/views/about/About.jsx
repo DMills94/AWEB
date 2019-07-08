@@ -17,6 +17,9 @@ import miro from '../../assets/icons/miro.svg'
 import overflow from '../../assets/icons/overflow.svg'
 import sketch from '../../assets/icons/sketch.svg'
 
+// Files
+import PDF from '../../assets/files/Albina_Cholak_resume.pdf'
+
 // Styles
 import './About.scss'
 
@@ -120,8 +123,9 @@ const About = props => {
                         <div className='flex'>
                             <a
                                 className='btn blue'
-                                download
-                                href=''
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                href={PDF}
                                 style={{ width: '205px' }}
                             >
                                 Download resume

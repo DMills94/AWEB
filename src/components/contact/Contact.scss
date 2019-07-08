@@ -1,5 +1,5 @@
 .contact-background {
-    @include background-color-opacity($black, 0.4);
+    @include background-colour-opacity($black, 0.4);
     animation-direction: reverse;
     height: 100vh;
     left: 0;

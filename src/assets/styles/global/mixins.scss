@@ -18,7 +18,7 @@
 }
 
 
-@mixin background-color-opacity($color, $opacity) {
+@mixin background-colour-opacity($color, $opacity) {
     background-color: $color;
     background-color: rgba($color, $opacity);
 }

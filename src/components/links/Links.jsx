@@ -11,7 +11,7 @@ import './Links.scss'
 const StyledLink = props => {
     return (
         <a
-            className='link'
+            className={`link ${props.hoverColour}`}
             href={props.href}
             target={props.newTab ? '_blank' : ''}
             rel={props.newTab ? 'noopener noreferrer' : ''}
@@ -23,6 +23,7 @@ const StyledLink = props => {
 }
 
 StyledLink.propTypes = {
+    hoverColour: PropTypes.string,
     href: PropTypes.string.isRequired,
     newTab: PropTypes.bool,
     text: PropTypes.string.isRequired,
@@ -30,6 +31,7 @@ StyledLink.propTypes = {
 }
 
 StyledLink.defaultProps = {
+    hoverColour: '',
     newTab: false,
     whiteArrow: false
 }
