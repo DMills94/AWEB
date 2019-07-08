@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Assets
-import arrowRight from '../../assets/icons/arrow-right.svg'
+import arrowRightBlue from '../../assets/icons/arrow-right.svg'
+import arrowRightWhite from '../../assets/icons/arrow-right-white.svg'
 
 // Styles
 import './Links.scss'
@@ -16,19 +17,21 @@ const StyledLink = props => {
             rel={props.newTab ? 'noopener noreferrer' : ''}
         >
             <p>{props.text}</p>
-            <img src={arrowRight} alt="->"/>
+            <img src={props.whiteArrow ? arrowRightWhite : arrowRightBlue} alt="->"/>
         </a>
     )
 }
 
 StyledLink.propTypes = {
     href: PropTypes.string.isRequired,
+    newTab: PropTypes.bool,
     text: PropTypes.string.isRequired,
-    newTab: PropTypes.bool
+    whiteArrow: PropTypes.bool
 }
 
 StyledLink.defaultProps = {
-    newTab: false
+    newTab: false,
+    whiteArrow: false
 }
 
 export default StyledLink

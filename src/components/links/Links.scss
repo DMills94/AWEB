@@ -1,13 +1,11 @@
 .link {
+    @include width-max-content();
     border-radius: 4px;
     color: $textBlue;
     cursor: pointer;
     display: flex;
     padding: 13px 0;
     transition: all 0.3s ease-in-out;
-    width: intrinsic;
-    width: -moz-max-content;
-    width: -webkit-max-content;
     
     img {
         margin-left: 10px;
@@ -16,5 +14,9 @@
     &:hover {
         background-color: rgba(#DFCCBE, .5);
         padding: 13px 16px;
+
+        p {
+            font-weight: 500;
+        }
     }
 }

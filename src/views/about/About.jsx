@@ -1,16 +1,18 @@
 import React from 'react'
 
 // Components
-import StyledLink from '../../components/links/Links.jsx'
+// import StyledLink from '../../components/links/Links.jsx'
 
 // Assets
-import aboutPortrait from '../../assets/images/about-portrait.jpg'
-import abstract from '../../assets/icons/abstract.svg'
+import aboutPortrait from '../../assets/images/about-portrait-3x.png'
+import linkedIn from '../../assets/icons/linkedin-blue.svg'
+import medium from '../../assets/icons/medium.svg'
+import telegramText from '../../assets/icons/telegram-text.svg'
 import insta1 from '../../assets/images/insta1.jpg'
 import insta2 from '../../assets/images/insta2.jpg'
 import insta3 from '../../assets/images/insta3.jpg'
 import insta4 from '../../assets/images/insta4.jpg'
-import linkedIn from '../../assets/icons/linkedin-blue.svg'
+import abstract from '../../assets/icons/abstract.svg'
 import miro from '../../assets/icons/miro.svg'
 import overflow from '../../assets/icons/overflow.svg'
 import sketch from '../../assets/icons/sketch.svg'
@@ -100,7 +102,7 @@ const instaItems = [
     }
 ]
 
-const About = () => {
+const About = props => {
     return (
         <section className='about'>
             <div className='container'>
@@ -141,7 +143,7 @@ const About = () => {
 
                 <div className='values'>
                     <h2 className='title'>... and I'm driven by</h2>
-                    <div className='items-wrap flex wrap'>
+                    <div className='items-wrap flex'>
                         {valuesItems.map((item, i) => {
                             return (
                                 <div className='item' key={i}>
@@ -162,10 +164,11 @@ const About = () => {
                                 <div className='item flex column' key={i}>
                                     <h3 className='sub-title'>{item.title}</h3>
                                     <p className='text'>{item.text}</p>
+                                    {/* Unused for now 
                                     <StyledLink
                                         href={item.href}
                                         text={item.linkText}
-                                    />
+                                    /> */}
                                 </div>
                             )
                         })}
@@ -176,19 +179,22 @@ const About = () => {
                     <h3>Need my help?</h3>
                     <a
                         className='btn white'
-                        href='/about'
-                        style={{ width: '197px'}}
-                    >Request consultation</a>
+                        onClick={props.toggleContact}
+                    >
+                        Request consultation
+                    </a>
                 </div>
 
                 <div className='feeds flex'>
                     <div className='feed-item flex column'>
-                        <p className='sub-title'>Medium</p>
-                        <p>I share my knowledge on my Medium blog</p>
+                        <img src={medium} alt='Medium' className='sub-title' />
+                        <p className='content'>I love sharing my knowledge and writing about my projects and design practice on medium.</p>
+                        <a className='blue' href='https://medium.com/@albinacholak' target='_blank' rel='noopener noreferrer'>Check out my medium blog</a>
                     </div>
                     <div className='feed-item flex column'>
-                        <p className='sub-title'>Telegram</p>
-                        <p>I share useful resources & materials in my Telegram channel.</p>
+                        <img src={telegramText} alt='Telegram' className='sub-title' />
+                        <p className='content'>My channel @MindMeanDesign is full of the best resources, tools & insights from conferences and my own practice.</p>
+                        <a className='blue' href='https://t.me/MindMeanDesign' target='_blank' rel='noopener noreferrer'>Join my telegram channel</a>
                     </div>
                 </div>
 

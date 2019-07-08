@@ -10,23 +10,45 @@ import './PortfolioCards.scss'
 // TYPE OPTIONS: wide, large, small
 
 const PortfolioCard = props => {
+    const smallBg = props.type === 'small' && props.image
     return (
-        <div className={`portfolio-card ${props.type}`}>
-            <p className='tags tiny'>{props.year}<span className='divide'></span>{props.tag.toUpperCase()}</p>
-            <h3 className='bold'>{props.title}</h3>
-            <p className='text small'>{props.text}</p>
-            <StyledLink
-                href={props.href}
-                text={props.linkText}
-                newTab={props.linkNewTab}
-            />
+        <div
+            className={`portfolio-card ${props.type} ${smallBg ? 'bg-image' : ''}`}
+            style={smallBg ? { backgroundImage: `url(${props.image})` } : {}}
+        >
+            <div className='text-wrap'>
+                <p className='tags tiny'>{props.year}<span className='divide'></span>{props.tag.toUpperCase()}</p>
+                <h2 className='bold'>{props.title}</h2>
+                <p className='text small'>{props.text}</p>
+                {props.link
+                    ? (
+                        <StyledLink
+                            href={props.href}
+                            text={props.linkText}
+                            newTab={props.linkNewTab}
+                            whiteArrow={smallBg}
+                        />
+                    )
+                    : (
+                        <p className='grey' style={{ padding: '13px 0', marginBottom: '30px' }}>Case study coming soon</p>
+                    )
+                }
+            </div>
+
+            {props.image && !smallBg &&
+                <div className="image-wrap">
+                    <img className='image' src={props.image} alt=''/>
+                </div>
+            }
         </div>
     )
 }
 
 PortfolioCard.propTypes = {
-    href: PropTypes.string.isRequired,
-    linkText: PropTypes.string.isRequired,
+    image: PropTypes.image,
+    href: PropTypes.string,
+    link: PropTypes.bool,
+    linkText: PropTypes.string,
     linkNewTab: PropTypes.bool,
     tag: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
@@ -36,6 +58,8 @@ PortfolioCard.propTypes = {
 }
 
 PortfolioCard.defaultProps = {
+    image: false,
+    link: true,
     linkNewTab: false,
     year: '2019'
 }

@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     padding: 18px 13px;
+    text-align: center;
 
     &.blue {
         background-color: $blue;
@@ -13,8 +14,7 @@
     }
 
     &.sky {
-        background-color: rgba(#527BCA, .5);
-        border: 1px solid #979797;
+        background-color: $indigoPorn20;
         color: $textBlue;
     }
 

@@ -39,25 +39,33 @@
 
         .items-wrap {
             justify-content: space-around;
+            position: relative;
             width: 100%;
         }
 
         .item {
-            padding: 20px;
-            width: 216px;
-            height: 216px;
-            transition: all 0.3s ease;
+            border: 1px solid $white;
+            padding: 42px 38px 16px;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            width: 25%;
 
             .emoji {
-                font-size: 33px;
+                font-size: 29px;
             }
             
             .sub-title {
+                font-weight: 500;
                 margin: 10px 0 8px;
             }
 
             &:hover {
-                box-shadow: 0 3px 5px 0.11px #E4E4E4 ;
+                border: 1px solid $tigerMilk;
+                border-radius: 4px;
+
+                .sub-title {
+                    color: $bluePopcorn;
+                }
             }
         }
     }
@@ -100,11 +108,16 @@
     }
 
     .feeds {
-        height: 182px;
+        height: 280px;
         justify-content: space-between;
         margin-bottom: 132px;
         
         .sub-title {
+            @include width-max-content();
+            margin-bottom: 16px;
+        }
+
+        .content {
             margin-bottom: 16px;
         }
 
@@ -112,16 +125,14 @@
             background-color: #F6F6F6;
             border-radius: 4px;
             height: 100%;
-            padding: 38px 35px;
+            padding: 58px 48px 58px 80px;
             width: calc(50% - 16px);
         }
     }
 
     .instagram {
-        margin: 0 auto 104px;
-        width: intrinsic;
-        width: -moz-max-content;
-        width: -webkit-max-content;
+        @include width-max-content();
+        margin-bottom: 72px;
 
         h2 {
             margin-bottom: 0;
@@ -132,16 +143,15 @@
         }
 
         .items-wrap {
-            height: 170px;
             align-items: center;
             justify-content: space-between;
             margin-top: 44px;
 
             a {
-                margin-right: 24px;
+                margin-right: 28px;
 
                 img {
-                    width: 170px;
+                    width: 215px;
                 }
 
                 &:last-of-type {

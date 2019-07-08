@@ -3,6 +3,14 @@ import React from 'react'
 // Components
 import PortfolioCard from '../../components/portfolio/PortfolioCards.jsx'
 
+// Assets
+import Hub from '../../assets/images/portfolio/hub.png'
+import Bob from '../../assets/images/portfolio/bob.png'
+import Choice from '../../assets/images/portfolio/choice.png'
+import Moebel from '../../assets/images/portfolio/moebel.png'
+import BornForHugs from '../../assets/images/portfolio/born-for-hugs.png'
+import Toolkit from '../../assets/images/portfolio/toolkit.png'
+
 // Styles
 import './Portfolio.scss'
 
@@ -24,7 +32,7 @@ const Portfolio = () => {
     return (
         <section className='portfolio'>
             <div className='container'>
-            <h2>Projects I love</h2>
+            <h2 className='title'>Projects I love</h2>
 
             <div className='portfolio-items flex wrap'>
                 <PortfolioCard
@@ -32,60 +40,58 @@ const Portfolio = () => {
                     year='2019'
                     tag='Product design'
                     title='Octopus HUB'
-                    text='A single platform for all financial products of Octopus'
+                    text='The first digital platform to cross-sell all Octopus products.'
                     href='/portfolio'
                     linkText='Read case study'
-                    linkNewTab={false}
+                    image={Hub}
                 />
                 <PortfolioCard
                     type='large'
                     year='2019'
                     tag='Product design'
                     title='Octopus Bob '
-                    text='A single platform for all financial products of Octopus'
-                    href='/portfolio'
-                    linkText='Read case study'
-                    linkNewTab={false}
+                    text='Enterprise UX for property loan management (internal tool)'
+                    link={false}
+                    image={Bob}
                 />
                 <PortfolioCard
                     type='wide'
                     year='2019'
                     tag='Service and UX design'
-                    title='Choice investments'
-                    text='A single platform for all financial products of Octopus'
-                    href='/portfolio'
-                    linkText='Read case study'
-                    linkNewTab={false}
+                    title='Choice'
+                    text='Reimagining P2P investment product at scale.'
+                    link={false}
+                    image={Choice}
                 />
                 <PortfolioCard
                     type='small'
                     year='2019'
                     tag='Web design'
                     title='[more] moebel'
-                    text='A single platform for all financial products of Octopus'
-                    href='/portfolio'
-                    linkText='Check the website'
+                    text='An innovative furniture catalogue for austenitic brand Germany'
+                    href='https://www.more-moebel.de/en'
+                    linkText='Check live website'
                     linkNewTab={true}
+                    image={Moebel}
                 />
                 <PortfolioCard
                     type='small'
                     year='2019'
                     tag='Web design'
                     title='Born for hugs'
-                    text='A single platform for all financial products of Octopus'
-                    href='/portfolio'
-                    linkText='Check the website'
+                    text='An award-winning compaign for Huggies'
+                    href='https://www.behance.net/gallery/46609921/Born-for-Hugs'
+                    linkText='Check Behance case study'
                     linkNewTab={true}
+                    image={BornForHugs}
                 />
                 <PortfolioCard
                     type='wide'
                     year='2019'
                     tag='Service and UX design'
                     title='Plexal service'
-                    text='A single platform for all financial products of Octopus'
-                    href='/portfolio'
-                    linkText='Read case study'
-                    linkNewTab={false}
+                    text='Service and ecosystem design for the largest business incubator in Europe.'
+                    link={false}
                 />
                 <PortfolioCard
                     type='small'
@@ -93,9 +99,9 @@ const Portfolio = () => {
                     tag='Service and UX design'
                     title='Octopus Group'
                     text='A single platform for all financial products of Octopus'
-                    href='/portfolio'
-                    linkText='Check the website'
-                    linkNewTab={false}
+                    href='https://medium.com/octopus-labs-london/ux-ui-redesign-case-study-bf7d34ed00fb'
+                    linkText='Read the case study on Medium'
+                    linkNewTab={true}
                 />
                 <PortfolioCard
                     type='small'
@@ -103,9 +109,9 @@ const Portfolio = () => {
                     tag='Design discovery'
                     title='Octopus Property'
                     text='A single platform for all financial products of Octopus'
-                    href='/portfolio'
-                    linkText='Check the website'
-                    linkNewTab={false}
+                    href='https://miro.com/app/board/o9J_kyLKTBg=/'
+                    linkText='Check the process on Miro'
+                    linkNewTab={true}
                 />
                 <PortfolioCard
                     type='wide'
@@ -114,8 +120,9 @@ const Portfolio = () => {
                     title='Design toolkit'
                     text='A single platform for all financial products of Octopus'
                     href='/portfolio'
-                    linkText='Read case study'
-                    linkNewTab={false}
+                    linkText='Checkout my toolkit'
+                    linkNewTab={true}
+                    image={Toolkit}
                 />
             </div>
 

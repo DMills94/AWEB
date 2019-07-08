@@ -20,7 +20,7 @@ const Homepage = () => {
                         and I help businesses to grow
                     </h1>
                     <p>
-                        as a Lead Product Designer, I craft <a href=''>digital</a> and <a href=''>physical</a> experiences, give <a href=''>talks</a> and share design insights in my <Link to='/blog'>blog</Link>.
+                        as a Lead Product Designer, I craft digital and physical experiences, give talks and share design insights in my <a href='https://medium.com/@albinacholak' target='_blank' rel='noopener noreferrer'>blog</a>.
                     </p>
                 </div>
             </div>

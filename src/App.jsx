@@ -30,9 +30,19 @@ class App extends Component {
                 <BrowserRouter>
                     <Header toggleContact={(event) => this.toggleContact(event)}/>
                     <Switch>
-                        <Route path='/' component={Homepage} exact />
-                        <Route path='/about' component={About} />
-                        <Route path='/portfolio' component={Portfolio} />
+                        <Route
+                            path='/'
+                            component={Homepage}
+                            exact
+                        />
+                        <Route
+                            path='/about'
+                            render={() => <About toggleContact={event => this.toggleContact(event)}/>}
+                        />
+                        <Route
+                            path='/portfolio'
+                            component={Portfolio}
+                        />
                         <Route component={Page404} />
                     </Switch>
                     <Footer />

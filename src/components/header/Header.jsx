@@ -90,15 +90,17 @@ class Header extends Component {
 					>
 						About
 					</Link>
-					<Link
-						to='/blog'
+					<a 
+						href='https://medium.com/@albinacholak'
 						className='nav-item small flex centre'
 						id='1'
+						target='_blank'
+						rel='noopener noreferrer'
 						onMouseEnter={e => this.hoverItem(e)}
 						onMouseLeave={e => this.unhoverItem(e)}
 					>
 						Blog
-					</Link>
+					</a>
 					<Link
 						to='/portfolio'
 						className='nav-item small flex centre'

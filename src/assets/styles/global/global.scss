@@ -52,8 +52,9 @@ h4 {
 }
 
 a {
-	color: #527BCA;
+	color: $indigoPorn;
 	cursor: pointer;
+	font-family: $avenir;
 	font-size: 18px;
 	position: relative;
 	text-decoration: none;
@@ -84,6 +85,14 @@ p {
 		font-size: 12px;
 		line-height: 18px;
 	}
+}
+
+.grey {
+	color: $textGrey;
+}
+
+.blue {
+	color: $bluePopcorn;
 }
 
 .bold {

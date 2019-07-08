@@ -3,10 +3,21 @@
     border-radius: 2px;
     margin-bottom: 24px;
     padding: 40px 58px;
+    overflow: hidden;
 
     &.wide {
+        display: flex;
         height: 266px;
         width: 100%;
+
+        .text-wrap {
+            width: 50%;
+        }
+
+        .image-wrap {
+            position: relative;
+            width: 50%
+        }
     }
 
     &.small {
@@ -15,12 +26,29 @@
     }
 
     &.large {
-        height: 382px;
+        height: 448px;
         width: calc(50% - 12px);
     }
 
+    &.bg-image {
+        background-size: contain;
+        color: $textWhite;
+
+        .tags {
+            @include width-max-content();
+            background: $white;
+            border-radius: 2px;
+            color: $moonCookie;
+            padding: 10px 7px;
+        }
+
+        .link {
+            color: $textWhite;
+        }
+    }
+
     .tags {
-        color: $textDarkBlue;
+        font-weight: 600;
         margin-bottom: 20px;
 
         .divide {
@@ -31,12 +59,25 @@
         }
     }
 
-    h3 {
+    h2 {
         margin-bottom: 8px;
     }
 
     .text {
-        margin-bottom: 24px;
+        height: 48px;
+        margin-bottom: 16px;
         white-space: pre-wrap;
+    }
+
+    .link {
+        margin-bottom: 30px;
+    }
+
+    .image-wrap {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
     }
 }

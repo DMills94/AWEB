@@ -22,3 +22,9 @@
     background-color: $color;
     background-color: rgba($color, $opacity);
 }
+
+@mixin width-max-content() {
+    width: intrinsic;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+}
