@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 // Assets
-import portrait from '../../assets/images/portrait.png'
+import portrait from '../../assets/images/portrait-3x.png'
 
 // Styles
 import './Homepage.scss'

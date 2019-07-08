@@ -70,11 +70,9 @@ class Header extends Component {
 	render() {
 		return (
 			<header className='header flex align-v'>
-				<div>
-					<Link to='/' className='logo'>
-						/ Albina Cholak
-					</Link>
-				</div>
+				<Link to='/' className='logo'>
+					/ Albina Cholak
+				</Link>
 				<nav
 					className='flex'
 					onMouseEnter={() => this.showSlider()}
