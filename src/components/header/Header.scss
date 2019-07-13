@@ -18,11 +18,19 @@
             height: 100%;
             width: 100%;
         }
+
+        @include tablet {
+            margin-left: 32px;
+        }
+
+        @include phone {
+            margin-left: 16px;
+        }
     }
     
     nav {
         height: 100%;
-        width: 546px;
+        width: 417px;
         position: relative;
 
         .nav-item {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-// import StyledLink from '../../components/links/Links.jsx'
+import StyledLink from '../../components/links/Links.jsx'
 
 // Assets
 import aboutPortrait from '../../assets/images/about-portrait-3x.png'
@@ -31,7 +31,7 @@ const valuesItems = [
     },
     {
         icon: '⚡️',
-        title: 'Empowering',
+        title: 'Empowerment',
         text: 'Growing other designers,  educating stakeholders or giving talks — my passion is to share knowledge.'
     },
     {
@@ -109,13 +109,11 @@ const About = props => {
     return (
         <section className='about'>
             <div className='container'>
-                <div className='intro flex align-v'>
-                    <div className='right'>
-                        <h2>
-                            Hello 😉<br />
-                            I'm Albina Cholak,<br />
-                            a Lead Product Designer.
-                        </h2>
+                <div className='intro flex wrap align-v'>
+                    <div className='right flex column centre'>
+                        <h2>Hello 😉</h2>
+                        <h2>I'm Albina Cholak,</h2>
+                        <h2>a Lead Product Designer.</h2>
                         <p>
                         I’m driven by business outcomes, in love with technical possibilities and empowered with the best design tools & methods to create experinces people love ❤️<br />
                         <br />
@@ -126,7 +124,7 @@ const About = props => {
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 href={PDF}
-                                style={{ width: '205px' }}
+                                style={{ maxWidth: '205px' }}
                             >
                                 Download resume
                             </a>
@@ -134,7 +132,7 @@ const About = props => {
                                 className='btn sky icon'
                                 href='https://www.linkedin.com/in/cholak/'
                                 rel='noopener noreferrer'
-                                style={{ width: '155px' }}
+                                style={{ maxWidth: '155px' }}
                                 target='_blank'
                             >
                                 <img src={linkedIn} alt=''/>
@@ -147,7 +145,7 @@ const About = props => {
 
                 <div className='values'>
                     <h2 className='title'>... and I'm driven by</h2>
-                    <div className='items-wrap flex'>
+                    <div className='items-wrap flex wrap'>
                         {valuesItems.map((item, i) => {
                             return (
                                 <div className='item' key={i}>
@@ -165,7 +163,7 @@ const About = props => {
                     <div className='items-wrap flex wrap'>
                         {growthItems.map((item, i) => {
                             return (
-                                <div className='item flex column' key={i}>
+                                <div className='item flex align-v column' key={i}>
                                     <h3 className='sub-title'>{item.title}</h3>
                                     <p className='text'>{item.text}</p>
                                     {/* Unused for now 
@@ -193,19 +191,27 @@ const About = props => {
                     <div className='feed-item flex column'>
                         <img src={medium} alt='Medium' className='sub-title' />
                         <p className='content'>I love sharing my knowledge and writing about my projects and design practice on medium.</p>
-                        <a className='blue' href='https://medium.com/@albinacholak' target='_blank' rel='noopener noreferrer'>Check out my medium blog</a>
+                        <StyledLink
+                            href='https://medium.com/@albinacholak'
+                            newTab={true}
+                            text='My Medium blog'
+                        />
                     </div>
                     <div className='feed-item flex column'>
                         <img src={telegramText} alt='Telegram' className='sub-title' />
                         <p className='content'>My channel @MindMeanDesign is full of the best resources, tools & insights from conferences and my own practice.</p>
-                        <a className='blue' href='https://t.me/MindMeanDesign' target='_blank' rel='noopener noreferrer'>Join my telegram channel</a>
+                        <StyledLink
+                            href='https://t.me/MindMeanDesign'
+                            newTab={true}
+                            text='Join me on Telegram'
+                        />
                     </div>
                 </div>
 
                 <div className='instagram'>
                     <h2>My Instagram</h2>
                     <a href='https://instagram.com/mindmeandsgn' target='_blank' rel='noopener noreferrer'>@MindMeanDesign</a>
-                    <div className='items-wrap flex'>
+                    <div className='items-wrap flex wrap'>
                         {instaItems.map((image, i) => {
                             return <a href={image.url} target='_blank' rel='noopener noreferrer' key={i}><img src={image.imageUrl} alt={`Instagram${i}`}/></a>
                         })}

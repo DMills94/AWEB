@@ -1,31 +1,47 @@
 .homepage {
     overflow: hidden;
-    min-height: calc(100vh - 96px);
+    height: calc(100vh - 96px);
+    min-height: 540px;
+    justify-content: center;
     flex-direction: row-reverse;
+    position: relative;
 
     .portrait {
         height: calc(100vh - 96px);
+        min-height: 540px;
+        min-width: 417px;
     }
 
-    // Content
     .content {
+        padding: 0 32px;
         flex-grow: 1;
-        padding: 0 16px;
-        position: relative;
 
-        h1 {
+        p {
+            margin-top: 32px;
+            max-width: 420px;
+        }
+    }
+
+    @include tablet {
+        flex-wrap: wrap;
+        height: auto;
+
+        .portrait {
             margin-bottom: 32px;
         }
 
-        p {
-            max-width: 420px;
-        }
+        .content{
+            margin-bottom: 32px;
 
-        @include tablet {
-            align-items: center;
-            flex-direction: column;
-            justify-content: space-between;
-            padding-top: 100px;
+            h1 {
+                font-size: 34px;
+                line-height: 40px;
+                text-align: left;
+            }
+
+            p {
+                max-width: initial;
+            }
         }
     }
 }

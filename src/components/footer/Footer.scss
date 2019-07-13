@@ -25,5 +25,9 @@
         color: $textWhite;
         font-size: 32px;
         text-decoration: none;
+
+        @include phone {
+            font-size: 24px;
+        }
     }
 }

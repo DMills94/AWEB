@@ -1,8 +1,9 @@
 .portfolio-card {
     background-color: $peachBeach;
     border-radius: 2px;
-    margin-bottom: 24px;
-    padding: 52px 58px;
+    margin: 0 12px 24px;
+    min-width: 380px;
+    padding: 52px 58px 0;
     position: relative;
     overflow: hidden;
 
@@ -19,16 +20,44 @@
             position: relative;
             width: 50%
         }
+
+        @include tablet {
+            flex-direction: column;
+            height: auto;
+
+            .text-wrap,
+            .image-wrap {
+                width: 100%;
+            }
+        }
     }
 
     &.small {
         height: 304px;
-        width: calc(50% - 12px);
+        width: calc(50% - 24px);
+        
+        @include tablet {
+            min-width: 75%;
+        }
+
+        @include phone {
+            height: auto;
+            min-width: 100%;
+        }
     }
 
     &.large {
         height: 448px;
-        width: calc(50% - 12px);
+        width: calc(50% - 24px);
+        
+        @include tablet {
+            min-width: 75%;
+        }
+
+        @include phone {
+            height: auto;
+            min-width: 100%;
+        }
     }
 
     .bg-image {
@@ -80,6 +109,10 @@
         height: 48px;
         margin-bottom: 16px;
         white-space: pre-wrap;
+
+        @include phone {
+            height: auto;
+        }
     }
 
     .link {

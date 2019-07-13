@@ -7,15 +7,11 @@
 
     .intro {
         flex-direction: row-reverse;
-        justify-content: space-around;
-        margin-bottom: 130px;
-
-        h2 {
-            margin-bottom: 24px;
-        }
+        justify-content: center;
+        margin-bottom: 120px;
 
         p {
-            margin-bottom: 32px;
+            margin: 24px 0 32px;
             max-width: 360px;
         }
 
@@ -24,8 +20,37 @@
         }
 
         .portrait {
-            margin-right: 60px;
-            min-width: 547px;
+            max-width: 547px;
+            width: 50%;
+            
+            @include tablet {
+                width: 100%;
+            }
+        }
+
+        .right {
+            flex-grow: 1;
+            margin-bottom: 36px;
+
+            @include phone {
+                width: 100%;
+
+                h2 {
+                    text-align: left;
+                    width: 100%;
+                }
+
+                p {
+                    max-width: 100%;
+                }
+            }
+
+            @include phone {
+                .btn {
+                    margin: 0 12px;
+                    width: calc(50% - 24px)
+                }
+            }
         }
     }
 
@@ -38,15 +63,14 @@
         margin-bottom: 100px;
 
         .items-wrap {
-            justify-content: space-around;
-            position: relative;
+            justify-content: center;
             width: 100%;
         }
 
         .item {
             border: 1px solid $white;
-            padding: 42px 38px 16px;
-            position: relative;
+            padding: 42px 38px;
+            min-width: 350px;
             transition: all 0.3s ease-in-out;
             width: 25%;
 
@@ -74,16 +98,23 @@
         margin-bottom: 14px;
 
         .items-wrap {
-            justify-content: space-between;
+            justify-content: center;
             width: 100%;
         }
 
         .item {
             background-color: $peachBeach;
             height: 340px;
-            margin-bottom: 24px;
-            padding: 60px 0 28px 80px;
-            width: 460px;
+            margin: 0 12px 24px;
+            min-width: 350px;
+            padding-top: 60px;
+            width: calc(50% - 24px);
+
+            @include phone {
+                min-width: 100%;
+                height: auto;
+                padding: 42px 16px;
+            }
 
             .text {
                 flex-grow: 1;
@@ -108,7 +139,6 @@
     }
 
     .feeds {
-        height: 280px;
         justify-content: space-between;
         margin-bottom: 132px;
         
@@ -124,16 +154,25 @@
         .feed-item {
             background-color: #F6F6F6;
             border-radius: 4px;
-            height: 100%;
-            padding: 58px 48px 58px 80px;
+            min-height: 280px;
+            padding: 60px 5% 48px;
             width: calc(50% - 16px);
+        }
+
+        @include tablet {
+            flex-direction: column;
+            
+            .feed-item {
+                margin-bottom: 24px;
+                width: 100%;
+            }
         }
     }
 
     .instagram {
-        @include width-max-content();
         margin-bottom: 72px;
         text-align: center;
+        width: 100%;
 
         h2 {
             margin-bottom: 0;
@@ -145,18 +184,16 @@
 
         .items-wrap {
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 44px;
 
             a {
-                margin-right: 28px;
+                margin: 0 12px 24px;
+                min-width: 170px;
+                width: calc(25% - 24px);
 
                 img {
-                    width: 215px;
-                }
-
-                &:last-of-type {
-                    margin-right: 0;
+                    width: 100%;
                 }
             }
         }
@@ -165,13 +202,21 @@
     .design {
         border: 1px solid $pink;
         border-radius: 2px;
-        height: 292px;
+        padding: 60px 5%;
         width: 100%;
 
         .items-wrap {
             justify-content: space-between;
             margin-top: 12px;
             width: 60%;
+
+            @include tablet {
+                width: 75%;
+            }
+
+            @include phone{
+                width: 90%;
+            }    
         }
 
         h3 {

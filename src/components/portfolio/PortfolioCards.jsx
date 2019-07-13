@@ -41,7 +41,7 @@ const PortfolioCard = props => {
             </div>
 
             {props.image && !smallBg &&
-                <div className='image-wrap'>
+                <div className='image-wrap flex centre'>
                     <img className='image' src={props.image} alt=''/>
                 </div>
             }
