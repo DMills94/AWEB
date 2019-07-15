@@ -3,6 +3,8 @@
 
 #pnpm
 shrinkwrap.yaml
+pnpm-lock.yaml
+pnpm-debug.log
 
 #Webpack build
 /dist/

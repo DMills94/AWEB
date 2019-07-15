@@ -1,15 +1,40 @@
+// SIZES
+$desktop: 1025px;
+$tablet: 768px;
+$phone: 420px;
+
 // FONTS
 $avenir: 'Avenir Next', sans-serif;
+$libreBaskerville: 'Libre Baskerville', serif;
 
 // COLOURS
-$blue: #213F7A;
-$darkBlue: #101652;
+$moonCookie: #191919;
+$bluePopcorn: #002D83;
+$peachBeach: #FAF4EF;
+$tigerMilk: #DFCCBE;
+$bakedNaked: #8A6F5B;
+$indigoPorn: #527BCA;
+$indigoPorn50: rgba($indigoPorn, .5);
+$indigoPorn20: rgba($indigoPorn, .2);
+
+
+$black: #000;
+$blue: #002D83;
 $brown: #8A6F5B;
+$darkBlue: #101652;
+$pink: #DFCCBE;
+
+// TEXT
+$textBlack: #191919;
+$textBlue: #002D83;
+$textGrey: #929292;
+$textDarkBlue: #213F7A;
+$textWhite: #fff;
 
 
 // BORDERS
 $borderPink: #DFCCBE;
+$borderBlue: #002D83;
 
 // BACKGROUNDS
-$pink: #FDEDE4;
 $white: #fff;

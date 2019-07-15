@@ -15,11 +15,16 @@ module.exports = {
                 ]
             },
             {
-                //Image loader
-                test: /\.(jpg|png|gif|svg)$/,
+                //Image/PDF loader
+                test: /\.(pdf|jpg|png|gif|svg)$/,
                 use: [
-                    'file-loader'
-                ]
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ],
             },
             {
                 //Font loader
@@ -52,7 +57,8 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist')
+        path: path.resolve(__dirname, './dist'),
+        publicPath: '/'
     },
     plugins: [
         new HtmlWebPackPlugin({
@@ -62,7 +68,8 @@ module.exports = {
     ],
     devServer: {
         contentBase: './dist',
-        port: 4000,
-        hotOnly: true
+        historyApiFallback: true,
+        hotOnly: true,
+        port: 4000
     }
 }

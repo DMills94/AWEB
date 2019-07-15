@@ -1,30 +1,60 @@
 .header {
-    background-color: $pink;
-    height: 60px;
+    background-color: $textWhite;
+    border-bottom: 1px solid $borderBlue;
+    height: 96px;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
-}
 
-.small-logo-wrap {
-    background-color: $blue;
-    display: block;
-	height: 60px;
-	width: 85px;
-    z-index: 10;
-    
-    a {
-        height: 100%;
-        width: 100%;
-    }
-
-	.small-logo {
-        left: 55%;
+    .logo {
+        color: $textDarkBlue;
+        font-weight: 600;
+        margin-left: 48px;
         position: relative;
-        height: 20px;
-        right: 8px;
-        top: 65%;
-        transform: translateY(-50%);
-	}
+        
+        a {
+            height: 100%;
+            width: 100%;
+        }
+
+        @include tablet {
+            margin-left: 32px;
+        }
+
+        @include phone {
+            margin-left: 16px;
+        }
+    }
+    
+    nav {
+        height: 100%;
+        width: 417px;
+        position: relative;
+
+        .nav-item {
+            flex-grow: 1;
+            border-left: 1px solid $borderBlue;
+            color: $textDarkBlue;
+            cursor: pointer;
+            height: 100%;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+            z-index: 12;
+        }
+
+        .slider {
+            background-color: $blue;
+            height: 100%;
+            position: absolute;
+            transition: none;
+            width: 0;
+            z-index: 11;
+
+            &.view {
+                left: 0;
+            }
+        }
+    }
 }

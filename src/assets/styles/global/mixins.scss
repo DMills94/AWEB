@@ -1,4 +1,30 @@
-@mixin background-color-opacity($color, $opacity) {
+// Media Queries
+@mixin desktop {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: #{$phone}) {
+        @content;
+    }
+}
+
+
+@mixin background-colour-opacity($color, $opacity) {
     background-color: $color;
     background-color: rgba($color, $opacity);
+}
+
+@mixin width-max-content() {
+    width: intrinsic;
+    width: -moz-max-content;
+    width: -webkit-max-content;
 }
