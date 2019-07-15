@@ -10,8 +10,6 @@ const Homepage = () => {
     useEffect(() => window.scrollTo(0, 0))
     return (
         <section className='homepage flex'>
-            <img className='portrait' src={portrait} alt=''/>
-
             <div className='content flex column centre'>
                 <div className='content-text'>
                     <h1>Hello 👋</h1>
@@ -22,6 +20,8 @@ const Homepage = () => {
                     </p>
                 </div>
             </div>
+
+            <img className='portrait' src={portrait} alt=''/>
         </section>
     )
 }

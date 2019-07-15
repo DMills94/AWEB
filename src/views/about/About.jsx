@@ -110,6 +110,7 @@ const About = props => {
         <section className='about'>
             <div className='container'>
                 <div className='intro flex wrap align-v'>
+                    <img className='portrait' src={aboutPortrait} alt='' />
                     <div className='right flex column centre'>
                         <h2>Hello 😉</h2>
                         <h2>I'm Albina Cholak,</h2>
@@ -140,7 +141,6 @@ const About = props => {
                             </a>
                         </div>
                     </div>
-                    <img className='portrait' src={aboutPortrait} alt='' />
                 </div>
 
                 <div className='values'>

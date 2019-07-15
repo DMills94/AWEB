@@ -3,7 +3,6 @@
     height: calc(100vh - 96px);
     min-height: 540px;
     justify-content: center;
-    flex-direction: row-reverse;
     position: relative;
 
     .portrait {
@@ -13,6 +12,7 @@
     }
 
     .content {
+        min-height: calc(100vh - 96px);
         padding: 0 32px;
         flex-grow: 1;
 
@@ -26,13 +26,7 @@
         flex-wrap: wrap;
         height: auto;
 
-        .portrait {
-            margin-bottom: 32px;
-        }
-
-        .content{
-            margin-bottom: 32px;
-
+        .content {
             h1 {
                 font-size: 34px;
                 line-height: 40px;

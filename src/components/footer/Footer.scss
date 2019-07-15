@@ -30,4 +30,8 @@
             font-size: 24px;
         }
     }
+
+    @include tablet {
+        background-color: $textDarkBlue;
+    }
 }
