@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 // Components
 import StyledLink from '../../components/links/Links.jsx'
@@ -106,6 +106,9 @@ const instaItems = [
 ]
 
 const About = props => {
+    // Scroll to top on load
+    useEffect(() => window.scrollTo(0, 0))
+    
     return (
         <section className='about'>
             <div className='container'>
