@@ -6,8 +6,11 @@
     }
 
     .intro {
-        justify-content: center;
+        justify-content: space-between;
         margin-bottom: 120px;
+        position: relative;
+        left: -50px;
+        width: calc(100% + 50px);
 
         p {
             margin: 24px 0 32px;
@@ -28,8 +31,7 @@
         }
 
         .right {
-            flex-grow: 1;
-            margin-top: 36px;
+            align-items: start;
 
             @include phone {
                 width: 100%;
@@ -42,14 +44,21 @@
                 p {
                     max-width: 100%;
                 }
-            }
 
-            @include phone {
                 .btn {
                     margin: 0 12px;
                     width: calc(50% - 24px)
                 }
             }
+
+            @include tablet {
+                margin-top: 32px;
+            }
+        }
+
+        @include tablet {
+            justify-content: center;
+            left: 0;
         }
     }
 
@@ -120,10 +129,10 @@
                 white-space: pre-wrap;
             }
 
-            @include phone {
-                min-width: 100%;
+            @include tablet {
                 height: auto;
-                padding: 42px 16px;
+                padding: 60px 48px;
+                width: 100%;
             }
         }
     }
