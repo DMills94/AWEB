@@ -33,6 +33,8 @@ class App extends Component {
     componentWillMount() {
         this.unlisten = this.props.history.listen(() => {
             window.scrollTo(0, 0)
+            const navBar = document.querySelector('nav')
+            navBar.classList.remove('toggle')
         })
     }
 
