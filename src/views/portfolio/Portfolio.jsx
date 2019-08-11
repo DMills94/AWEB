@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 // Components
-import PortfolioCard from '../../components/portfolio/PortfolioCards.jsx'
+import PortfolioCard from '../../components/portfolio/PortfolioCards'
 
 // Assets
 import Hub from '../../assets/images/portfolio/hub.png'
@@ -31,9 +31,6 @@ import './Portfolio.scss'
 // />
 
 const Portfolio = () => {
-    // Scroll to top on load
-    useEffect(() => window.scrollTo(0, 0))
-
     return (
         <section className='portfolio'>
             <div className='container'>

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+    import React, { useEffect } from 'react'
 
 // Components
-import StyledLink from '../../components/links/Links.jsx'
+import StyledLink from '../../components/links/Links'
 
 // Assets
 import aboutPortrait from '../../assets/images/about-portrait-3x.png'
@@ -23,91 +23,75 @@ import PDF from '../../assets/files/Albina_Cholak_resume.pdf'
 // Styles
 import './About.scss'
 
-const valuesItems = [
-    {
-        icon: '🙌',
-        title: 'Collaboration',
-        text: 'I love effective co-creation with my team and our customers utilising creative design methods.'
-    },
-    {
-        icon: '⚡️',
-        title: 'Empowerment',
-        text: 'Growing other designers,  educating stakeholders or giving talks — my passion is to share knowledge.'
-    },
-    {
-        icon: '👶',
-        title: 'Simplification',
-        text: 'I believe in the power of good teamwork and right stakeholder engagement'
-    },
-    {
-        icon: '💛',
-        title: 'Kindness',
-        text: 'Smile and positive attidude the only way to deliver amazing projects.'
-    }
-]
-
-// In Text use \n to indicate a new line
-const growthItems = [
-    {
-        title: 'Design process & strategy',
-        text: 'Building a culture of innovation in Agile product development.\nConsistent design process that puts customer at the centre.',
-        href: '/about',
-        linkText: 'Request a consultation'
-    },
-    {
-        title: 'Product design (UX/UI)',
-        text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
-        href: '/about',
-        linkText: 'Request product design'
-    },
-    {
-        title: 'UX research',
-        text: 'Explicitely documented scenarios customer segmentscost-benefit analyses design process',
-        href: '/about',
-        linkText: 'Request service design'
-    },
-    {
-        title: 'Service design',
-        text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
-        href: '/about',
-        linkText: 'Hire me to run a workshop'
-    },
-    {
-        title: 'Design management',
-        text: 'Growing designers\nFostering a culture of innovation',
-        href: '/about',
-        linkText: 'Get a private consultation'
-    },
-    {
-        title: 'Talks & workshops',
-        text: 'Solve business problems and translate it to a beautiful digital solution that customers love.',
-        href: '/about',
-        linkText: 'Hire me to give a talk'
-    },
-]
-
-const instaItems = [
-    {
-        url: 'https://www.instagram.com/p/BxO_fW3AbvJ/',
-        imageUrl: insta1
-    },
-    {
-        url: 'https://www.instagram.com/p/BxIF68bAA-g/',
-        imageUrl: insta2
-    },
-    {
-        url: 'https://www.instagram.com/p/Bw-F_4mAvtH/',
-        imageUrl: insta3
-    },
-    {
-        url: 'https://www.instagram.com/p/BwFEgMuAwKr/',
-        imageUrl: insta4
-    }
-]
-
 const About = props => {
-    // Scroll to top on load
-    useEffect(() => window.scrollTo(0, 0))
+    const valuesItems = [
+        {
+            icon: '🙌',
+            title: 'Collaboration',
+            text: 'I love effective co-creation with my team and our customers utilising creative design methods.'
+        },
+        {
+            icon: '⚡️',
+            title: 'Empowerment',
+            text: 'Growing other designers,  educating stakeholders or giving talks — my passion is to share knowledge.'
+        },
+        {
+            icon: '👶',
+            title: 'Simplification',
+            text: 'I believe in the power of good teamwork and right stakeholder engagement'
+        },
+        {
+            icon: '💛',
+            title: 'Kindness',
+            text: 'Smile and positive attidude the only way to deliver amazing projects.'
+        }
+    ]
+    
+    // In Text use \n to indicate a new line
+    const growthItems = [
+        {
+            title: 'Improving design process & mentoring ',
+            text: 'Establishing bespoke design processes. Nurturing a culture of customers at the heart and innovation in Agile.  Improving design-maturity by mentoring designers and educating a wider team on human-centred design. ',
+            links: [
+                {linkText: 'Consultation for business', linkHref: false, linkAction: props.toggleContact},
+                {linkText: 'Consultation for designers', linkHref: false, linkAction: props.toggleContact}
+            ]
+        },
+        {
+            title: 'Designing products (UX/UI) & design research',
+            text: `From prototypes to UI specifications — I solve business problems and translate it to a beautiful digital solution that customers love.
+Collecting and analysing research about users. Visualising data in actionable artifacts: personas, user flows, user journeys, blueprints, story & opportunity mapping, affinity diagrams.`,
+            links: [
+                {linkText: 'Discuss a project with me', linkAction: props.toggleContact}
+            ]
+        },
+        {
+            title: 'Facilitating workshops and giving talks',
+            text: 'Facilitaition design workshops, design & feature sprint, design studio and talks at meetups and conferences. Learn fast & release with confidence.',
+            links: [
+                {linkText: 'Request a workshop / talk', linkAction: props.toggleContact}
+            ]
+        },
+    ]
+    
+    const instaItems = [
+        {
+            url: 'https://www.instagram.com/p/BxO_fW3AbvJ/',
+            imageUrl: insta1
+        },
+        {
+            url: 'https://www.instagram.com/p/BxIF68bAA-g/',
+            imageUrl: insta2
+        },
+        {
+            url: 'https://www.instagram.com/p/Bw-F_4mAvtH/',
+            imageUrl: insta3
+        },
+        {
+            url: 'https://www.instagram.com/p/BwFEgMuAwKr/',
+            imageUrl: insta4
+        }
+    ]
     
     return (
         <section className='about'>
@@ -162,18 +146,27 @@ const About = props => {
                 </div>
 
                 <div className='growth'>
-                    <h2 className='title'>How I help grow businesses</h2>
+                    <h2 className='title'>I help businesses and designers to grow</h2>
                     <div className='items-wrap flex wrap'>
                         {growthItems.map((item, i) => {
                             return (
                                 <div className='item flex align-v column' key={i}>
                                     <h3 className='sub-title'>{item.title}</h3>
                                     <p className='text'>{item.text}</p>
-                                    {/* Unused for now 
-                                    <StyledLink
-                                        href={item.href}
-                                        text={item.linkText}
-                                    /> */}
+                                    <div className='links-wrap flex align-v'>
+                                        {item.links.map((link, i) => {
+                                            return link.linkHref
+                                                ? <StyledLink
+                                                    href={link.linkAction}
+                                                    key={i}
+                                                    text={link.linkText}
+                                                />
+                                                :  <a className='link' key={i} onClick={link.linkAction}>
+                                                    {link.linkText}
+                                                </a>
+                                            })
+                                        }
+                                    </div>
                                 </div>
                             )
                         })}
@@ -190,24 +183,29 @@ const About = props => {
                     </a>
                 </div>
 
-                <div className='feeds flex'>
-                    <div className='feed-item flex column'>
-                        <img src={medium} alt='Medium' className='sub-title' />
-                        <p className='content'>I love sharing my knowledge and writing about my projects and design practice on medium.</p>
-                        <StyledLink
-                            href='https://medium.com/@albinacholak'
-                            newTab={true}
-                            text='My Medium blog'
-                        />
-                    </div>
-                    <div className='feed-item flex column'>
-                        <img src={telegramText} alt='Telegram' className='sub-title' />
-                        <p className='content'>My channel @MindMeanDesign is full of the best resources, tools & insights from conferences and my own practice.</p>
-                        <StyledLink
-                            href='https://t.me/MindMeanDesign'
-                            newTab={true}
-                            text='Join me on Telegram'
-                        />
+                <div className='feeds flex column'>
+                    <h2 className='title'>Learn for free from my blogs  </h2>
+                    <div className='feed-item-wrap flex'>
+                        <div className='feed-item flex column'>
+                            <img src={medium} alt='Medium' className='sub-title' />
+                            <p className='content'>I love sharing my knowledge and writing about my projects and design practice on medium.</p>
+                            <StyledLink
+                                hoverColour='blue'
+                                href='https://medium.com/@albinacholak'
+                                newTab={true}
+                                text='My Medium blog'
+                            />
+                        </div>
+                        <div className='feed-item flex column'>
+                            <img src={telegramText} alt='Telegram' className='sub-title' />
+                            <p className='content'>My channel @MindMeanDesign is full of the best resources, tools & insights from conferences and my own practice.</p>
+                            <StyledLink
+                                hoverColour='blue'
+                                href='https://t.me/MindMeanDesign'
+                                newTab={true}
+                                text='Join me on Telegram'
+                            />
+                        </div>
                     </div>
                 </div>
 
