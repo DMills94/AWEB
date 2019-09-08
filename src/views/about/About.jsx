@@ -17,9 +17,6 @@ import miro from '../../assets/icons/miro.svg'
 import overflow from '../../assets/icons/overflow.svg'
 import sketch from '../../assets/icons/sketch.svg'
 
-// Files
-import PDF from '../../assets/files/Albina_Cholak_resume.pdf'
-
 // Styles
 import './About.scss'
 
@@ -111,7 +108,7 @@ Collecting and analysing research about users. Visualising data in actionable ar
                                 className='btn blue'
                                 target='_blank'
                                 rel='noopener noreferrer'
-                                href={PDF}
+                                href='https://drive.google.com/drive/folders/1KFpMDmawVonOZuBUEkgDtIsZSrRoO_LB'
                                 style={{ maxWidth: '205px' }}
                             >
                                 Download resume
