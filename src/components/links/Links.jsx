@@ -27,7 +27,10 @@ StyledLink.propTypes = {
     href: PropTypes.string.isRequired,
     newTab: PropTypes.bool,
     text: PropTypes.string.isRequired,
-    whiteArrow: PropTypes.bool
+    whiteArrow: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.string
+    ])
 }
 
 StyledLink.defaultProps = {

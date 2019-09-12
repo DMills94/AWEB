@@ -1,26 +1,29 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-//Styles
+// Assets
+import burgerMenu from '../../assets/icons/menu-icon.svg'
+
+// Styles
 import './Header.scss'
 
-class Header extends Component {
+const Header = props => {
 
 	/**
 	 * Hide or show the slider div depending on if the user has hovered the navigation bar
 	 */
-	showSlider= () => {
+	const showSlider = () => {
 		const slider = document.querySelector('.slider')
 
 		slider.style.transition = 'width 0.1s ease'
 
 		setTimeout(() => {
-			slider.style.transition = 'left 0.3s ease, width 0.1s ease'
+			slider.style.transition = 'left 0.3s ease, top 0.3s ease, width 0.1s ease'
 		}, 300);
 		slider.classList.add('view')
 	}
 
-	hideSlider = () => {
+	const hideSlider = () => {
 		const slider = document.querySelector('.slider')
 		
 		slider.style.width = '0'
@@ -36,15 +39,21 @@ class Header extends Component {
 	 * Handle on hover 'animation' of the header nav - sliding box.
 	 * @param {obj} e event object
 	 */
-	hoverItem = e => {
+	const hoverItem = e => {
 		const navItems = document.querySelectorAll('.nav-item')
 		let left = 0
+		let top = 0
 		const selectedNavItem = e.target
 		
 		for (let item in navItems) {
 			if (navItems[item].id === selectedNavItem.id)
 				break
-			left += navItems[item].offsetWidth
+
+			// Determine if nav bar is in mobile view or desktop
+			if (selectedNavItem.offsetTop === 0)
+				left += navItems[item].offsetWidth
+			else if (selectedNavItem.offsetLeft === 0)
+				top += navItems[item].offsetHeight
 		}
 		
 		const slider = document.querySelector('.slider')
@@ -52,8 +61,10 @@ class Header extends Component {
 		if (slider.classList.contains('view')) {
 			selectedNavItem.style.color = '#fff'
 
-			slider.style.left = `${left}px`
+			slider.style.left = `${top > 0 ? 0 : left}px`
+			slider.style.top = `${left > 0 ? 0 : top}px`
 			slider.style.width = `${selectedNavItem.offsetWidth}px`
+			slider.style.height = `${selectedNavItem.offsetHeight	}px`
 		}
 	}
 
@@ -61,66 +72,71 @@ class Header extends Component {
 	 * Handle on unhover 'animation' of the header nav - sliding box.
 	 * @param {obj} e event object
 	 */
-	unhoverItem = e => {
+	const unhoverItem = e => {
 		const selectedNavItem = e.target
 		selectedNavItem.style.color = ''
 	}
-	
 
-	render() {
-		return (
-			<header className='header flex align-v'>
-				<Link to='/' className='logo'>
-					/ Albina Cholak
-				</Link>
-				<nav
-					className='flex'
-					onMouseEnter={() => this.showSlider()}
-					onMouseLeave={() => this.hideSlider()}
-				>
-					<div className='slider'></div>
-					<Link
-						to='/about'
-						className='nav-item small flex centre'
-						id='0'
-						onMouseEnter={e => this.hoverItem(e)}
-						onMouseLeave={e => this.unhoverItem(e)}
-					>
-						About
-					</Link>
-					<a 
-						href='https://medium.com/@albinacholak'
-						className='nav-item small flex centre'
-						id='1'
-						target='_blank'
-						rel='noopener noreferrer'
-						onMouseEnter={e => this.hoverItem(e)}
-						onMouseLeave={e => this.unhoverItem(e)}
-					>
-						Blog
-					</a>
-					<Link
-						to='/portfolio'
-						className='nav-item small flex centre'
-						id='2'
-						onMouseEnter={e => this.hoverItem(e)}
-						onMouseLeave={e => this.unhoverItem(e)}
-					>
-						Portfolio
-					</Link>
-					<a
-						className='nav-item small flex centre'
-						id='3'
-						onClick={this.props.toggleContact}
-						onMouseEnter={e => this.hoverItem(e)}
-						onMouseLeave={e => this.unhoverItem(e)}
-					>
-						Let's talk
-					</a>
-				</nav>
-			</header>
-		)
+	const toggleMenu = () => {
+		const navBar = document.querySelector('nav')
+		navBar.classList.toggle('toggle')
 	}
+
+
+
+	return (
+		<header className='header flex align-v'>
+			<Link to='/' className='logo'>
+				/ Albina Cholak
+			</Link>
+			<img className='menu-icon' src={burgerMenu} onClick={toggleMenu} alt='Menu'/>
+			<nav
+				className='flex'
+				onMouseEnter={() => showSlider()}
+				onMouseLeave={() => hideSlider()}
+			>
+				<div className='slider'></div>
+				<Link
+					to='/about'
+					className='nav-item small flex centre'
+					id='0'
+					onMouseEnter={e => hoverItem(e)}
+					onMouseLeave={e => unhoverItem(e)}
+				>
+					About
+				</Link>
+				<a 
+					href='https://medium.com/@albinacholak'
+					className='nav-item small flex centre'
+					id='1'
+					target='_blank'
+					rel='noopener noreferrer'
+					onMouseEnter={e => hoverItem(e)}
+					onMouseLeave={e => unhoverItem(e)}
+				>
+					Blog
+				</a>
+				<Link
+					to='/portfolio'
+					className='nav-item small flex centre'
+					id='2'
+					onMouseEnter={e => hoverItem(e)}
+					onMouseLeave={e => unhoverItem(e)}
+				>
+					Portfolio
+				</Link>
+				<a
+					className='nav-item small flex centre'
+					id='3'
+					onClick={props.toggleContact}
+					onMouseEnter={e => hoverItem(e)}
+					onMouseLeave={e => unhoverItem(e)}
+				>
+					Let's talk
+				</a>
+			</nav>
+		</header>
+	)
 }
 
 export default Header

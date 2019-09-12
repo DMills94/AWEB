@@ -1,0 +1,16 @@
+.link-tree {
+    margin: 48px auto;
+    max-width: 285px;
+
+    h3 {
+        color: $bluePopcorn;
+        
+        &:last-of-type {
+            margin-bottom: 16px;
+        }
+    }
+
+    .link-tree-wrap {
+        margin-top: 54px;
+    }
+}

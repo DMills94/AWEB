@@ -27,11 +27,21 @@
             margin-left: 16px;
         }
     }
+
+    .menu-icon {
+        display: none;
+        margin-right: 24px;
+
+        @include tablet {
+            display: block;
+        }
+    }
     
     nav {
         height: 100%;
         width: 417px;
         position: relative;
+        transition: left 0.3s ease-in-out;
 
         .nav-item {
             flex-grow: 1;
@@ -54,6 +64,25 @@
 
             &.view {
                 left: 0;
+            }
+        }
+
+        &.toggle {
+            left: 0;
+        }
+
+        @include tablet {
+            background-color: $white;
+            flex-direction: column;
+            height: calc(100vh - 96px);
+            left: -100vw;
+            overflow: hidden;
+            position: absolute;
+            top: 96px;
+            width: 100vw;
+
+            .nav-item {
+                border-bottom: 1px solid $borderBlue;
             }
         }
     }

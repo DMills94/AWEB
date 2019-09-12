@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Components
-import StyledLink from '../links/Links.jsx'
+import StyledLink from '../links/Links'
 
 // Styles
 import './PortfolioCards.scss'
@@ -21,7 +21,7 @@ const PortfolioCard = props => {
                 />
             }
             <div className='text-wrap'>
-                <p className='tags tiny'>{props.year}<span className='divide'></span>{props.tag.toUpperCase()}</p>
+                <p className='tags caption'>{props.year}<span className='divide'></span>{props.tag.toUpperCase()}</p>
                 <h2 className='bold'>{props.title}</h2>
                 <p className='text small'>{props.text}</p>
                 {props.link
@@ -50,7 +50,6 @@ const PortfolioCard = props => {
 }
 
 PortfolioCard.propTypes = {
-    image: PropTypes.image,
     href: PropTypes.string,
     link: PropTypes.bool,
     linkText: PropTypes.string,
