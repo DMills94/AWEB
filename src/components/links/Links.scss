@@ -4,7 +4,8 @@
     color: $textBlue;
     cursor: pointer;
     display: flex;
-    padding: 13px 0;
+    line-height: 30px;
+    padding: 14px 64px 14px 0;
     transition: all 0.3s ease-in-out;
     
     img {
@@ -13,7 +14,8 @@
 
     &:hover {
         @include background-colour-opacity($tigerMilk, 0.5);
-        padding: 13px 16px;
+        padding-left: 32px;
+        padding-right: 32px;
 
         &.blue {
             background-color: $indigoPorn20;

@@ -7,15 +7,10 @@ import StyledLink from '../../components/links/Links'
 import aboutPortrait from '../../assets/images/about-portrait-3x.png'
 import linkedIn from '../../assets/icons/linkedin-blue.svg'
 import medium from '../../assets/icons/medium.svg'
-import telegramText from '../../assets/icons/telegram-text.svg'
-import insta1 from '../../assets/images/insta1.jpg'
-import insta2 from '../../assets/images/insta2.jpg'
-import insta3 from '../../assets/images/insta3.jpg'
-import insta4 from '../../assets/images/insta4.jpg'
-import abstract from '../../assets/icons/abstract.svg'
-import miro from '../../assets/icons/miro.svg'
-import overflow from '../../assets/icons/overflow.svg'
-import sketch from '../../assets/icons/sketch.svg'
+import insta1 from '../../assets/images/insta5.jpg'
+import insta2 from '../../assets/images/insta1.jpg'
+import insta3 from '../../assets/images/insta2.jpg'
+import insta4 from '../../assets/images/insta3.jpg'
 
 // Styles
 import './About.scss'
@@ -34,13 +29,13 @@ const About = props => {
         },
         {
             icon: '👶',
-            title: 'Simplification',
-            text: 'I believe in the power of good teamwork and right stakeholder engagement'
+            title: 'Growth',
+            text: 'I see design as a tool for driving business value.'
         },
         {
             icon: '💛',
             title: 'Kindness',
-            text: 'Smile and positive attidude the only way to deliver amazing projects.'
+            text: 'Smile and positive attitude the only way to deliver amazing projects.'
         }
     ]
     
@@ -73,19 +68,19 @@ Collecting and analysing research about users. Visualising data in actionable ar
     
     const instaItems = [
         {
-            url: 'https://www.instagram.com/p/BxO_fW3AbvJ/',
+            url: 'https://www.instagram.com/p/B0lQQj9AAsE/',
             imageUrl: insta1
         },
         {
-            url: 'https://www.instagram.com/p/BxIF68bAA-g/',
+            url: 'https://www.instagram.com/p/BxO_fW3AbvJ/',
             imageUrl: insta2
         },
         {
-            url: 'https://www.instagram.com/p/Bw-F_4mAvtH/',
+            url: 'https://www.instagram.com/p/BxIF68bAA-g/',
             imageUrl: insta3
         },
         {
-            url: 'https://www.instagram.com/p/BwFEgMuAwKr/',
+            url: 'https://www.instagram.com/p/Bw-F_4mAvtH/',
             imageUrl: insta4
         }
     ]
@@ -109,12 +104,12 @@ Collecting and analysing research about users. Visualising data in actionable ar
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 href='https://drive.google.com/drive/folders/1KFpMDmawVonOZuBUEkgDtIsZSrRoO_LB'
-                                style={{ maxWidth: '205px' }}
+                                
                             >
                                 Download resume
                             </a>
                             <a
-                                className='btn sky icon'
+                                className='btn indigoPorn20 icon'
                                 href='https://www.linkedin.com/in/cholak/'
                                 rel='noopener noreferrer'
                                 style={{ maxWidth: '155px' }}
@@ -170,39 +165,24 @@ Collecting and analysing research about users. Visualising data in actionable ar
                     </div>
                 </div>
 
-                <div className='help flex column centre'>
-                    <h3>Need my help?</h3>
-                    <a
-                        className='btn white'
-                        onClick={props.toggleContact}
-                    >
-                        Request consultation
-                    </a>
-                </div>
-
-                <div className='feeds flex column'>
-                    <h2 className='title'>Learn for free from my blogs  </h2>
-                    <div className='feed-item-wrap flex wrap'>
-                        <div className='feed-item flex column'>
-                            <img src={medium} alt='Medium' className='sub-title' />
-                            <p className='content'>I love sharing my knowledge and writing about my projects and design practice on medium.</p>
-                            <StyledLink
-                                hoverColour='blue'
-                                href='https://medium.com/@albinacholak'
-                                newTab={true}
-                                text='My Medium blog'
-                            />
-                        </div>
-                        <div className='feed-item flex column'>
-                            <img src={telegramText} alt='Telegram' className='sub-title' />
-                            <p className='content'>My channel @MindMeanDesign is full of the best resources, tools & insights from conferences and my own practice.</p>
-                            <StyledLink
-                                hoverColour='blue'
-                                href='https://t.me/MindMeanDesign'
-                                newTab={true}
-                                text='Join me on Telegram'
-                            />
-                        </div>
+                <div className='publications'>
+                    <h2 className='title'>Publications</h2>
+                    <h3>How to establish Service design? (in Ukrainian)</h3>
+                    <StyledLink
+                        hoverColour='blue'
+                        href='https://telegraf.design/donesty-tsinnist-servis-dyzajnu-v-organizatsiyi-tse-vidpovidalnist-dyzajneriv/'
+                        newTab={true}
+                        text='Read on Telegraf.design'
+                    />
+                    <div className='medium'>
+                        <img src={medium} alt='Medium' className='sub-title' />
+                        <p style={{ marginTop: '16px' }}>I share my case studies, conference overviews and insights to my design practise</p>
+                        <StyledLink
+                            hoverColour='blue'
+                            href='https://medium.com/@albinacholak'
+                            newTab={true}
+                            text='Check my Medium blog'
+                        />
                     </div>
                 </div>
 
@@ -213,16 +193,6 @@ Collecting and analysing research about users. Visualising data in actionable ar
                         {instaItems.map((image, i) => {
                             return <a href={image.url} target='_blank' rel='noopener noreferrer' key={i}><img src={image.imageUrl} alt={`Instagram${i}`}/></a>
                         })}
-                    </div>
-                </div>
-
-                <div className='design flex column centre'>
-                    <h3>I'm powered by the best design tools</h3>
-                    <div className='items-wrap flex'>
-                        <img src={abstract} alt='Abstract'/>
-                        <img src={sketch} alt='Sketch'/>
-                        <img src={overflow} alt='Overflow'/>
-                        <img src={miro} alt='Miro'/>
                     </div>
                 </div>
             </div>

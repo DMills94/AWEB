@@ -5,15 +5,16 @@
     border: none;
     display: flex;
     justify-content: center;
-    padding: 18px 13px;
+    line-height: 30px;
+    padding: 14px 32px;
     text-align: center;
 
     &.blue {
-        background-color: $blue;
+        background-color: $bluePopcorn;
         color: $textWhite;
     }
 
-    &.sky {
+    &.indigoPorn20 {
         background-color: $indigoPorn20;
         color: $textBlue;
     }
@@ -25,7 +26,10 @@
 
     &.icon {
         img {
+            margin-top: -2px;
             margin-right: 14px;
+            height: 12px;
+            width: 12px;
         }
     }
 }
