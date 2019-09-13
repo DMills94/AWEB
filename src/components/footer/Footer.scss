@@ -19,6 +19,10 @@
                 width: 16px;
             }
         }
+
+        @include phone {
+            align-items: center;
+        }
     }
 
     .email {
@@ -34,4 +38,8 @@
     @include tablet {
         background-color: $textDarkBlue;
     }
+
+    @include phone {
+        justify-content: center; 
+    } 
 }

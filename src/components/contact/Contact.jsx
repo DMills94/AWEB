@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 // Components
-import TextInput from '../base/text-input/TextInput.jsx'
-import TextArea from '../base/text-area/TextArea.jsx'
+import TextInput from '../base/text-input/TextInput'
+import TextArea from '../base/text-area/TextArea'
 
 // Styles
 import './Contact.scss'

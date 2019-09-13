@@ -7,9 +7,6 @@ import portrait from '../../assets/images/portrait-3x.png'
 import './Homepage.scss'
 
 const Homepage = () => {
-    // Scroll to top of page on load
-    useEffect(() => window.scrollTo(0, 0))
-
     return (
         <section className='homepage flex'>
             <div className='content flex column centre'>
