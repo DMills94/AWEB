@@ -182,7 +182,7 @@ Collecting and analysing research about users. Visualising data in actionable ar
 
                 <div className='feeds flex column'>
                     <h2 className='title'>Learn for free from my blogs  </h2>
-                    <div className='feed-item-wrap flex'>
+                    <div className='feed-item-wrap flex wrap'>
                         <div className='feed-item flex column'>
                             <img src={medium} alt='Medium' className='sub-title' />
                             <p className='content'>I love sharing my knowledge and writing about my projects and design practice on medium.</p>

@@ -59,6 +59,7 @@
         @include tablet {
             justify-content: center;
             left: 0;
+            width: 100%;
         }
     }
 
@@ -99,6 +100,10 @@
                     color: $bluePopcorn;
                 }
             }
+        }
+
+        @include tablet {
+            min-width: 0;
         }
     }
 
