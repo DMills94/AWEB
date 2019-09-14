@@ -41,22 +41,13 @@ Clone the repo
 $ git clone https://github.com/DMills94/AWEB.git
 ```
 
-Install pacakges with pnpm (global install it first!)   
-*NB*: You can use `npm` instead of `pnpm` if you wish.
+Install packages with npm
 ```
-$ npm i pnpm -g
 $ cd AWEB
-$ pnpm i
+$ npm i
 ```
 
 Run the webpack dev server
 ```
 $ npm run dev
 ```
-
-### 2. Back End
-
-WIP. 
-
-* CMS management system
-* Emails (? - might be done on the FE)
