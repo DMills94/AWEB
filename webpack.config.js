@@ -68,9 +68,6 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: './public/index.html',
             favicon: 'src/assets/images/favicon.ico'
-        }),
-        new webpack.EnvironmentPlugin({
-            NODE_ENV: 'development'
         })
     ],
     devServer: {

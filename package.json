@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server --mode development",
-    "start": "node server.js",
-    "heroku-postbuild": "webpack -p"
+    "dev": "webpack-dev-server --mode development"
   },
   "author": "David Mills",
   "devDependencies": {
@@ -36,7 +34,6 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "express": "^4.16.4",
     "react-ga": "^2.6.0",
     "react-router-dom": "^5.0.0"
   }
