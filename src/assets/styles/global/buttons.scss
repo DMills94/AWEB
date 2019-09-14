@@ -1,8 +1,8 @@
 .btn {
     align-items: center;
-    align-items: center;
     border-radius: 4px;
     border: none;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     line-height: 30px;
@@ -16,12 +16,17 @@
 
     &.indigoPorn20 {
         background-color: $indigoPorn20;
-        color: $textBlue;
+        color: $bluePopcorn;
     }
 
     &.white {
         background-color: $white;
-        color: $textBlue;
+        color: $bluePopcorn;
+    }
+
+    &.peach {
+        background-color: $peachBeach;
+        color: $bluePopcorn;
     }
 
     &.icon {

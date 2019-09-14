@@ -1,7 +1,8 @@
-    import React, { useEffect } from 'react'
+    import React from 'react'
 
 // Components
 import StyledLink from '../../components/links/Links'
+import IconBoxes from '../../components/icon-boxes/IconBoxes'
 
 // Assets
 import aboutPortrait from '../../assets/images/about-portrait-3x.png'
@@ -104,7 +105,6 @@ Collecting and analysing research about users. Visualising data in actionable ar
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 href='https://drive.google.com/drive/folders/1KFpMDmawVonOZuBUEkgDtIsZSrRoO_LB'
-                                
                             >
                                 Download resume
                             </a>
@@ -124,17 +124,9 @@ Collecting and analysing research about users. Visualising data in actionable ar
 
                 <div className='values'>
                     <h2 className='title'>... and I'm driven by</h2>
-                    <div className='items-wrap flex wrap'>
-                        {valuesItems.map((item, i) => {
-                            return (
-                                <div className='item' key={i}>
-                                    <p className='emoji'>{item.icon}</p>
-                                    <p className='sub-title'>{item.title}</p>
-                                    <p className='small'>{item.text}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
+                    <IconBoxes
+                        boxes={valuesItems}
+                    />
                 </div>
 
                 <div className='growth'>

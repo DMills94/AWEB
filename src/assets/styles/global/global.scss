@@ -14,7 +14,7 @@
 
 .container {
 	margin: 0 auto;
-	max-width: 950px;
+	max-width: 948px;
 	padding: 0 16px;
 	position: relative;
 }
@@ -30,18 +30,23 @@ h1 {
 }
 
 h2 {
+	color: $bluePopcorn;
 	font-family: $avenir;
 	font-size: 32px;
 	font-weight: 600;
 	line-height: 44px;
 	margin: 0;
+
+	&.peach {
+		color: $peachBeach;
+	}
 }
 
 h3 {
 	font-family: $avenir;
 	font-size: 24px;
 	font-weight: 500;
-	line-height: 45px;
+	line-height: 36px;
 	margin: 0;
 }
 
@@ -88,6 +93,7 @@ p {
 	}
 }
 
+// Fonts
 .grey {
 	color: $textGrey;
 }
@@ -108,8 +114,12 @@ p {
 	}
 }
 
+// Layout
+.mb-8 {
+	margin-bottom: 8px;
+}
 
-//FLEXBOX
+// Flexbox
 .flex {
 	display: flex;
 
@@ -133,4 +143,13 @@ p {
 	&.wrap {
 		flex-wrap: wrap;
 	}
+
+	&.jc-sb {
+		justify-content: space-between;
+	}
+}
+
+// Grid
+.grid {
+	display: grid;
 }

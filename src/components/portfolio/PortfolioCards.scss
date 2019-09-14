@@ -60,7 +60,6 @@
 
     .bg-image {
         background-size: cover;
-        color: $textWhite;
         height: 100%;
         left: 0;
         position: absolute;
@@ -69,7 +68,7 @@
         z-index: 1;
 
         & + .text-wrap {
-            color: $textWhite;
+            color: $fogHog;
             position: relative;
             z-index: 2;
             
