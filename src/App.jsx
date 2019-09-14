@@ -37,7 +37,6 @@ const App = props => {
             navBar.classList.remove('toggle')
         })
         
-        console.log(process.env.NODE_ENV)
         // Initalise GA for develop/production
         if (process.env.NODE_ENV !== 'development') initGA()
 
