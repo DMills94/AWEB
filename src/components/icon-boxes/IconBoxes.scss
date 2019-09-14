@@ -1,0 +1,31 @@
+.icon-box-wrap {
+    justify-content: center;
+    width: 100%;
+}
+
+.item {
+    border: 1px solid $white;
+    padding: 40px 24px;
+    min-width: 220px;
+    transition: all 0.3s ease-in-out;
+    width: 25%;
+
+    .emoji {
+        font-size: 29px;
+    }
+    
+    .sub-title {
+        font-weight: 500;
+        margin: 10px 0 8px;
+    }
+
+    &:hover {
+        border: 1px solid $tigerMilk;
+        background-color: $peachBeach;
+        border-radius: 4px;
+
+        .sub-title {
+            color: $bluePopcorn;
+        }
+    }
+}

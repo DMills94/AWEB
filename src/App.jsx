@@ -5,6 +5,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import Homepage from './views/homepage/Homepage';
 import About from './views/about/About';
 import Portfolio from './views/portfolio/Portfolio';
+import Workshop from './views/workshop/Workshop';
 import LinkTree from './views/link-tree/LinkTree';
 import MindMeanDesign from './views/mind-mean-design/MindMeanDesign';
 import Page404 from './views/404/404';
@@ -52,13 +53,19 @@ class App extends Component {
                         path='/about'
                         render={() => (
                             <About
-                                toggleContact={event =>
-                                    this.toggleContact(event)
-                                }
+                                toggleContact={event => this.toggleContact(event)}
                             />
                         )}
                     />
                     <Route path='/portfolio' component={Portfolio} />
+                    <Route
+                        path='/discovery-workshop'
+                        render={() => (
+                            <Workshop
+                                toggleContact={event => this.toggleContact(event)}
+                            />
+                        )}
+                    />
                     <Route path='/me' component={LinkTree} />
                     <Route path='/mmd' component={MindMeanDesign} />
                     <Route component={Page404} />

@@ -22,7 +22,7 @@ const PortfolioCard = props => {
             }
             <div className='text-wrap'>
                 <p className='tags caption'>{props.year}<span className='divide'></span>{props.tag.toUpperCase()}</p>
-                <h2 className='bold'>{props.title}</h2>
+                <h2 className={`bold ${smallBg ? 'peach' : ''}`}>{props.title}</h2>
                 <p className='text small'>{props.text}</p>
                 {props.link
                     ? (
