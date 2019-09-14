@@ -5,11 +5,11 @@ import IconBoxes from '../../components/icon-boxes/IconBoxes'
 
 // Assets
 import hands from '../../assets/icons/sign-language.svg'
-import workshop1 from '../../assets/images/workshop1.png'
-import workshop2 from '../../assets/images/workshop2.png'
-import workshop3 from '../../assets/images/workshop3.png'
-import workshop4 from '../../assets/images/workshop4.png'
-import workshop5 from '../../assets/images/workshop5.png'
+import workshop1 from '../../assets/images/workshop/workshop1.png'
+import workshop2 from '../../assets/images/workshop/workshop2.png'
+import workshop3 from '../../assets/images/workshop/workshop3.png'
+import workshop4 from '../../assets/images/workshop/workshop4.png'
+import workshop5 from '../../assets/images/workshop/workshop5.png'
 
 import './Workshop.scss'
 
