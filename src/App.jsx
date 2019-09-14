@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 // Pages
@@ -15,69 +15,76 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Contact from './components/contact/Contact';
 
-class App extends Component {
-    state = {
-        showContact: false
-    };
+// Helpers
+import { initGA, logPageView } from './helpers/analytics'
 
-    toggleContact = event => {
+const App = props => {
+    const [showContact, setShowContact] = useState(false)
+
+    const toggleContact = event => {
         if (event.target === event.currentTarget)
-            this.setState(prevState => ({
-                showContact: !prevState.showContact
-            }));
-    };
+            setShowContact(!showContact)
+    }
 
     /**
      * Used to detect change in the url to scroll the browser to the top
      * While not scrolling if the contact form is opened
      */
-    componentWillMount() {
-        this.unlisten = this.props.history.listen(() => {
+    useEffect(() => {
+        const unlisten = props.history.listen(() => {
             window.scrollTo(0, 0)
             const navBar = document.querySelector('nav')
             navBar.classList.remove('toggle')
         })
-    }
+        
+        // Initalise GA for develop/production
+        if (process.env.NODE_ENV !== 'development') initGA()
 
-    componentWillUnmount() {
-        this.unlisten()
-    }
+        return () => unlisten()
+    },[])
 
-    render() {
-        return (
-            <div className='background'>
-                <Header toggleContact={event => this.toggleContact(event)} />
-                <Switch>
-                    <Route path='/' component={Homepage} exact />
-                    <Route
-                        path='/about'
-                        render={() => (
-                            <About
-                                toggleContact={event => this.toggleContact(event)}
-                            />
-                        )}
-                    />
-                    <Route path='/portfolio' component={Portfolio} />
-                    <Route
-                        path='/discovery-workshop'
-                        render={() => (
-                            <Workshop
-                                toggleContact={event => this.toggleContact(event)}
-                            />
-                        )}
-                    />
-                    <Route path='/me' component={LinkTree} />
-                    <Route path='/mmd' component={MindMeanDesign} />
-                    <Route component={Page404} />
-                </Switch>
-                <Footer />
-                <Contact
-                    show={this.state.showContact}
-                    toggleModal={event => this.toggleContact(event)}
+    /**
+     * Develop/Production only
+     * 
+     * Pass URL path to GA, updates when pathname changes
+     */
+    useEffect(() => {
+        if (process.env.NODE_ENV !== 'development') logPageView(props.location.pathname)
+    },[props.location.pathname])
+    
+    return (
+        <div className='background'>
+            <Header toggleContact={event => toggleContact(event)} />
+            <Switch>
+                <Route path='/' component={Homepage} exact />
+                <Route
+                    path='/about'
+                    render={() => (
+                        <About
+                            toggleContact={event => toggleContact(event)}
+                        />
+                    )}
                 />
-            </div>
-        );
-    }
+                <Route path='/portfolio' component={Portfolio} />
+                <Route
+                    path='/discovery-workshop'
+                    render={() => (
+                        <Workshop
+                            toggleContact={event => toggleContact(event)}
+                        />
+                    )}
+                />
+                <Route path='/me' component={LinkTree} />
+                <Route path='/mmd' component={MindMeanDesign} />
+                <Route component={Page404} />
+            </Switch>
+            <Footer />
+            <Contact
+                show={showContact}
+                toggleModal={event => toggleContact(event)}
+            />
+        </div>
+    )
 }
 
 export default withRouter(App);
