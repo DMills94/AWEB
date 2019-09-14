@@ -15,6 +15,9 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Contact from './components/contact/Contact';
 
+// Helpers
+import { initGA, logPageView } from './helpers/analytics'
+
 const App = props => {
     const [showContact, setShowContact] = useState(false)
 
@@ -33,9 +36,14 @@ const App = props => {
             const navBar = document.querySelector('nav')
             navBar.classList.remove('toggle')
         })
+        initGA()
 
         return () => unlisten()
     },[])
+
+    useEffect(() => {
+        logPageView(props.location.pathname)
+    },[props.location.pathname])
     
     return (
         <div className='background'>
