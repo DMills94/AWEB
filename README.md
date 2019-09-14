@@ -25,9 +25,9 @@ __
 ### 1. Front End
 
 
-| Framework    |Styling      |
-|--------------|-------------|
-| React 16.8.3 | SCSS        |
+| Framework      |Styling      |
+|----------------|-------------|
+| React / Router | SCSS        |
 
 **Requirements**
 
@@ -51,3 +51,5 @@ Run the webpack dev server
 ```
 $ npm run dev
 ```
+
+If successful, the page should be visable on `localhost:4000`!
