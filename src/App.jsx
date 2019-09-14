@@ -36,13 +36,21 @@ const App = props => {
             const navBar = document.querySelector('nav')
             navBar.classList.remove('toggle')
         })
-        initGA()
+        
+        console.log(process.env.NODE_ENV)
+        // Initalise GA for develop/production
+        if (process.env.NODE_ENV !== 'development') initGA()
 
         return () => unlisten()
     },[])
 
+    /**
+     * Develop/Production only
+     * 
+     * Pass URL path to GA, updates when pathname changes
+     */
     useEffect(() => {
-        logPageView(props.location.pathname)
+        if (process.env.NODE_ENV !== 'development') logPageView(props.location.pathname)
     },[props.location.pathname])
     
     return (

@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
     target: 'web',
@@ -67,6 +68,9 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: './public/index.html',
             favicon: 'src/assets/images/favicon.ico'
+        }),
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'development'
         })
     ],
     devServer: {
