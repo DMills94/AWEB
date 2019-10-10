@@ -1,0 +1,118 @@
+.blogs {
+    .feature-blogs {
+        grid-template:
+            "a b"
+            "a c";
+        grid-gap: 24px;
+        height: 545px;
+        width: 100%;
+
+        div:first-child {
+            grid-area: a;
+        }
+
+        .blog-card {
+            border-radius: 2px;
+            padding: 20px 24px;
+            position: relative;
+
+            .img {
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+
+            .card-content {
+                bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+            }
+
+            h3 {
+                color: $nightCookie;
+            }
+            
+            .tag {
+                background-color: $white;
+            }
+        }
+    }
+
+    .all-blogs {
+        width: 100%;
+        
+        .blog-card {
+            display: flex;
+            height: 138px;
+            margin-bottom: 40px;
+            width:  calc(50% - 12px);
+
+            img {
+                height: 100%;
+                margin-right: 24px;
+                width: 138px;
+            }
+
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
+            .tag {
+                border: 1px solid $white;
+                margin-bottom: 16px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover {
+                .tag {
+                    border: 1px solid $bluePopcorn;
+                }
+
+                h3 {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .tag {
+        border-radius: 4px;
+        color: $bluePopcorn;
+        font-size: 12px;
+        height: 32px;
+        padding: 10px 16px;
+        width: max-content;
+    }
+}
+
+.blog {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .header-image {
+        height: 234px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100vw;
+    }
+
+    .container {
+        padding-top: 72px;
+    }
+
+    .blog-header {
+        background-color: $fogHog;
+        border-radius: 2px;
+        padding: 42px 82px;
+    }
+}

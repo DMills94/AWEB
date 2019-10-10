@@ -105,17 +105,15 @@ const Header = props => {
 				>
 					About
 				</Link>
-				<a 
-					href='https://medium.com/@albinacholak'
+				<Link 
+					to='/blog'
 					className='nav-item small flex centre'
 					id='1'
-					target='_blank'
-					rel='noopener noreferrer'
 					onMouseEnter={e => hoverItem(e)}
 					onMouseLeave={e => unhoverItem(e)}
 				>
 					Blog
-				</a>
+				</Link>
 				<Link
 					to='/portfolio'
 					className='nav-item small flex centre'

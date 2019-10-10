@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { Route, Switch, withRouter } from 'react-router-dom'
 
 // Pages
-import Homepage from './views/homepage/Homepage';
-import About from './views/about/About';
-import Portfolio from './views/portfolio/Portfolio';
-import Workshop from './views/workshop/Workshop';
-import LinkTree from './views/link-tree/LinkTree';
-import MindMeanDesign from './views/mind-mean-design/MindMeanDesign';
-import Page404 from './views/404/404';
+import Homepage from './views/homepage/Homepage'
+import About from './views/about/About'
+import Blog from './views/blog/Blog'
+import Portfolio from './views/portfolio/Portfolio'
+import Workshop from './views/workshop/Workshop'
+import LinkTree from './views/link-tree/LinkTree'
+import MindMeanDesign from './views/mind-mean-design/MindMeanDesign'
+import Page404 from './views/404/404'
+
+// Blogs
+import * as Blogs from './views/blog/Blogs/Blogs'
 
 //Components
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import Contact from './components/contact/Contact';
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+import Contact from './components/contact/Contact'
 
 // Helpers
 import { initGA, logPageView } from './helpers/analytics'
@@ -57,6 +61,8 @@ const App = props => {
             <Header toggleContact={event => toggleContact(event)} />
             <Switch>
                 <Route path='/' component={Homepage} exact />
+
+                {/* About */}
                 <Route
                     path='/about'
                     render={() => (
@@ -65,7 +71,22 @@ const App = props => {
                         />
                     )}
                 />
+
+                {/* Blogs */}
+                <Route path='/blog' component={Blog} />
+                {Object.values(Blogs).map((blog, idx) => {
+                    console.log('ROUTE BLOG', blog)
+                    return <Route
+                        path={`/blogs/${blog.preview.title.split(' ').join('_')}`}
+                        component={blog.Blog}
+                        key={idx}
+                    />
+                })}
+
+                {/* Portfolio */}
                 <Route path='/portfolio' component={Portfolio} />
+
+                {/* Extra pages */}
                 <Route
                     path='/discovery-workshop'
                     render={() => (
@@ -87,4 +108,4 @@ const App = props => {
     )
 }
 
-export default withRouter(App);
+export default withRouter(App)

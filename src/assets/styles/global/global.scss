@@ -87,6 +87,11 @@ p {
 		line-height: 24px;
 	}
 
+	&.tiny {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
 	&.caption {
 		font-size: 12px;
 		line-height: 18px;
@@ -114,7 +119,32 @@ p {
 	}
 }
 
+.txt-c {
+	text-align: center;
+}
+
 // Layout
+$margins: (
+  '0': 0,
+  '8': 8px,
+  '16': 16px,
+  '24': 24px,
+  '32': 32px,
+  '40': 40px,
+  '4'8: 48px,
+  '56': 56px,
+  '64': 64px,
+  '72': 72px,
+  '100': 100px,
+);
+
+.m {
+  @include modifiers($margins, 'margin', '-');
+  @include modifiers($margins, 'margin-top', 't-');
+  @include modifiers($margins, 'margin-bottom', 'b-');
+  @include modifiers($margins, 'margin-left', 'l-');
+  @include modifiers($margins, 'margin-right', 'r-');
+}
 .mb-8 {
 	margin-bottom: 8px;
 }
