@@ -131,10 +131,11 @@ $margins: (
   '24': 24px,
   '32': 32px,
   '40': 40px,
-  '4'8: 48px,
+  '48': 48px,
   '56': 56px,
   '64': 64px,
   '72': 72px,
+  '80': 80px,
   '100': 100px,
 );
 
@@ -147,6 +148,11 @@ $margins: (
 }
 .mb-8 {
 	margin-bottom: 8px;
+}
+
+.w-80 {
+	margin: 0 auto;
+	width: 80%;
 }
 
 // Flexbox

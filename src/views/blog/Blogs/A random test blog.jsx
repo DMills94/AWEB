@@ -4,9 +4,12 @@ import React from 'react'
 import Insta3 from '../../../assets/images/instagram/insta3.jpg'
 
 const constants = {
+    featured: true,
     image: Insta3,
+    medium: true,
     title: 'A random test blog',
-    tags: 'Process'
+    tags: 'Process',
+    url: 'https://google.co.uk'
 }
 
 const Blog = () =>

@@ -1,0 +1,48 @@
+.article {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .article-header {
+        background-color: $fogHog;
+        border-radius: 2px;
+        padding: 62px 16px;
+
+        .header-content,
+        img {
+            width: 48%;
+        }
+
+        img {
+            border-radius: 4px;;
+            left: 50%;
+            position: absolute;
+        }
+
+        .tags {
+            background-color: rgba($bluePopcorn, .1);
+            border-radius: 4px;;
+            color: $bluePopcorn;
+            line-height: 31px;
+            padding: 0 18px;
+            width: max-content;
+        }
+
+        .title {
+            color: $nightCookie;
+        }
+    }
+
+    .article-quote {
+        background-color: rgba($fogHog, .5);
+        border: 1px solid $fogHog;
+        border-radius: 2px;
+        padding: 32px 80px;
+
+        h3 {
+            width: 60%;
+        }
+    }
+}

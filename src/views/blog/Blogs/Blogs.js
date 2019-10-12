@@ -3,5 +3,5 @@ import RandomTestBlog from './A random test blog'
 
 export {
     DesignAsAProcess,
-    RandomTestBlog
+    RandomTestBlog,
 }

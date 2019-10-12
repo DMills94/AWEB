@@ -75,7 +75,6 @@ const App = props => {
                 {/* Blogs */}
                 <Route path='/blog' component={Blog} />
                 {Object.values(Blogs).map((blog, idx) => {
-                    console.log('ROUTE BLOG', blog)
                     return <Route
                         path={`/blogs/${blog.preview.title.split(' ').join('_')}`}
                         component={blog.Blog}
