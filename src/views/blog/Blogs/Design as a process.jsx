@@ -3,6 +3,8 @@ import React from 'react'
 // Components
 import ArticleHeader from '../../../components/articles/ArticleHeader'
 import ArticleQuote from '../../../components/articles/ArticleQuote'
+import ArticleSeries from '../../../components/articles/ArticleSeries'
+import ArticleSuggestions from '../../../components/articles/ArticleSuggestions'
 
 // Assets
 import Insta2 from '../../../assets/images/instagram/insta2.jpg'
@@ -36,10 +38,10 @@ const Blog = () =>
                 quote={`Life's too short to build products nobody wants.`}
             />
 
-            <img className='mb-24' src={Discover} alt='Discover, Define, Develop, Deliver'/>
+            <img className='mb-48' src={Discover} alt='Discover, Define, Develop, Deliver'/>
 
-            <div className='w-80'>
-                <h3>Learn your business. The solution:</h3>
+            <div className='w-80 mb-80'>
+                <h3 className='mb-40'>Learn your business. The solution:</h3>
 
                 <ol>
                     <li>
@@ -53,7 +55,7 @@ const Blog = () =>
                     </li>
                 </ol>
 
-                <h3>Business of design</h3>
+                <h3 className='mb-40'>Business of design</h3>
 
                 <ul>
                     <li>
@@ -68,6 +70,36 @@ const Blog = () =>
                     </li>
                 </ul>
             </div>
+
+            <ArticleSeries
+                linkedArticles={[
+                    'The need for a dream.',
+                    'Not everyone is a designer',
+                    'Learn your business.',
+                    'Make business believe in you.',
+                    'Embed design.'
+                ]}
+            />
+
+            <ArticleSuggestions
+                suggestions={[
+                    {
+                        title: 'test blog',
+                        image: Insta2,
+                        tags: 'DESIGN'
+                    },
+                    {
+                        title: 'test blog',
+                        image: Insta2,
+                        tags: 'DESIGN'
+                    },
+                    {
+                        title: 'test blog',
+                        image: Insta2,
+                        tags: 'DESIGN'
+                    }
+                ]}
+            />
         </div>
     </section>
 

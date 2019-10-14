@@ -21,6 +21,7 @@ import Contact from './components/contact/Contact'
 
 // Helpers
 import { initGA, logPageView } from './helpers/analytics'
+import { formatForUrl } from './helpers/utility'
 
 const App = props => {
     const [showContact, setShowContact] = useState(false)
@@ -76,7 +77,7 @@ const App = props => {
                 <Route path='/blog' component={Blog} />
                 {Object.values(Blogs).map((blog, idx) => {
                     return <Route
-                        path={`/blogs/${blog.preview.title.split(' ').join('_')}`}
+                        path={`/blogs/${formatForUrl(blog.preview.title)}`}
                         component={blog.Blog}
                         key={idx}
                     />

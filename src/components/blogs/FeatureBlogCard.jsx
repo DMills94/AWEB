@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+//Helpers
+import { formatForUrl } from '../../helpers/utility'
+
 // Assets
 import Medium from '../../assets/icons/medium.svg'
 
@@ -22,7 +25,7 @@ const FeatureBlogCard = props => {
             </a>
         )
         : (
-            <Link className='blog-card' to={`/blogs/${title.split(' ').join('_')}`}>
+            <Link className='blog-card' to={`/blogs/${formatForUrl(title)}`}>
                 <div
                     className='img'
                     style={{ backgroundImage: `url(${image})` }}

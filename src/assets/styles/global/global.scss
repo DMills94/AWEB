@@ -98,6 +98,52 @@ p {
 	}
 }
 
+// List styling
+ol, ul {
+	margin: 32px 0 70px;
+	padding-left: 40px;
+
+	ol, ul {
+		margin-top: 24px;
+	}
+
+	li {
+		&:before {
+			background-color: $white;
+			border: 1px solid $bluePopcorn;
+		}
+	}
+}
+
+ul {
+	list-style: none;
+	margin: 0;;
+
+	li {
+		position: relative;
+		list-style-position: outside;
+	}
+
+	li:before {
+		background-color: $bluePopcorn;
+		border-radius: 50%;
+		border: 1px solid $bluePopcorn;
+		content: "";
+		font-size: 32px;
+		height: 8px;
+		left: -16px;
+		position: absolute;
+		top: 9px;
+		width: 8px;
+	}
+}
+
+li {
+	line-height: 31px;
+	margin-bottom: 24px;
+	padding-left: 24px;
+}
+
 // Fonts
 .grey {
 	color: $textGrey;
@@ -151,7 +197,8 @@ $margins: (
 }
 
 .w-80 {
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 	width: 80%;
 }
 

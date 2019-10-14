@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import FeatureBlogCard from '../../components/blogs/FeatureBlogCard'
 import BlogCard from '../../components/blogs/BlogCard'
 
-// Assets
-import Insta1 from '../../assets/images/instagram/insta1.jpg'
-
 import * as Blogs from './Blogs/Blogs'
 
 import './Blog.scss'

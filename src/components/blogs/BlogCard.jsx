@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+// Helpers
+import { formatForUrl } from '../../helpers/utility'
+
 // Assets
 import Medium from '../../assets/icons/medium.svg'
 
@@ -28,7 +31,7 @@ const BlogCard = props => {
         )
         : (
             <div className='blog-card'>
-            <Link to={`/blogs/${title.split(' ').join('_')}`}>
+            <Link to={`/blogs/${formatForUrl(title)}`}>
                 <img
                     className='img'
                     src={image}
@@ -38,7 +41,7 @@ const BlogCard = props => {
             </Link>
             <div className='card-content'>
                 <div className='tag small'>{tags}</div>
-                <Link to={`/blogs/${title.split(' ').join('_')}`}>
+                <Link to={`/blogs/${formatForUrl(title)}`}>
                     <h3>{title}</h3>
                 </Link>
             </div>
