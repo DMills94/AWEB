@@ -39,6 +39,7 @@ const Contact = props => {
 					<p>Email <a href='mailto:hello@albinacholak.com'>hello@albinacholak.com</a><br />
 					Or fill out this form:</p>
 					<form
+						data-netlify-recaptcha='true'
 						name='contact'
 						method='POST'
 					>
@@ -63,6 +64,7 @@ const Contact = props => {
 							name='message'
 							handleChange={event => handleInputChange(event)}
 						/>
+						<div data-netlify-recaptcha='true' />
 						<button type='submit'>
 							Send
 						</button>
