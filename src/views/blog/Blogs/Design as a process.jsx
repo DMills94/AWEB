@@ -71,35 +71,9 @@ const Blog = () =>
                 </ul>
             </div>
 
-            <ArticleSeries
-                linkedArticles={[
-                    'The need for a dream.',
-                    'Not everyone is a designer',
-                    'Learn your business.',
-                    'Make business believe in you.',
-                    'Embed design.'
-                ]}
-            />
+            <ArticleSeries />
 
-            <ArticleSuggestions
-                suggestions={[
-                    {
-                        title: 'test blog',
-                        image: Insta2,
-                        tags: 'DESIGN'
-                    },
-                    {
-                        title: 'test blog',
-                        image: Insta2,
-                        tags: 'DESIGN'
-                    },
-                    {
-                        title: 'test blog',
-                        image: Insta2,
-                        tags: 'DESIGN'
-                    }
-                ]}
-            />
+            <ArticleSuggestions />
         </div>
     </section>
 
