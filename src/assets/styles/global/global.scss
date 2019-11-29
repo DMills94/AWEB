@@ -98,6 +98,23 @@ p {
 	}
 }
 
+.tag {
+	@include width-max-content();
+	background-color: transparent;
+	border-radius: 4px;
+	color: $bluePopcorn;
+	font-size: 12px;
+	font-weight: 600;
+	height: 32px;
+	padding: 10px 16px;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease-in-out;
+
+	&:hover {
+		background-color: rgba($bluePopcorn, 0.1);
+	}
+}
+
 // List styling
 ol, ul {
 	margin: 32px 0 70px;
@@ -139,6 +156,7 @@ ul {
 }
 
 li {
+	font-family: $avenir;
 	line-height: 31px;
 	margin-bottom: 24px;
 	padding-left: 24px;

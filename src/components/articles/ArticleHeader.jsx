@@ -4,7 +4,7 @@ const ArticleHeader = ({ tags, title, image }) =>
     <header className='article-header mb-72 align-v'>
         <div className='container flex jc-sb'>
             <div className='header-content'>
-                <div className='tags mb-8'>{tags.toUpperCase()}</div>
+                <div className='tag mb-8'>{tags.toUpperCase()}</div>
                 <h1 className='title mb-16'>{title}</h1>
                 <p className='grey tiny mb-32'>
                     PUBLISHED 10 OCT 2019 - 7 MIN READ

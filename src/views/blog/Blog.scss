@@ -15,6 +15,7 @@
             border-radius: 2px;
             padding: 20px 24px;
             position: relative;
+            transition: all 0.3s ease-in-out;
 
             .img {
                 background-size: cover;
@@ -36,9 +37,9 @@
             h3 {
                 color: $nightCookie;
             }
-            
-            .tag {
-                background-color: $white;
+
+            &:hover {
+                transform: scale(1.01);
             }
         }
     }
@@ -72,19 +73,7 @@
                 padding: 18px 0;
             }
 
-            .tag {
-                border: 1px solid $white;
-                margin-bottom: 16px;
-                transition: all 0.3s ease-in-out;
-                padding: 10px 0;
-            }
-
             &:hover {
-                .tag {
-                    border: 1px solid $bluePopcorn;
-                    padding: 10px 16px;
-                }
-
                 h3 {
                     text-decoration: underline;
                 }
@@ -98,14 +87,5 @@
             height: 54px;
             width: 100%;
         }
-    }
-
-    .tag {
-        border-radius: 4px;
-        color: $bluePopcorn;
-        font-size: 12px;
-        height: 32px;
-        padding: 10px 16px;
-        width: max-content;
     }
 }
