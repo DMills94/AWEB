@@ -13,12 +13,22 @@
         .header-content,
         img {
             width: 48%;
+
+            @include tablet {
+                width: 100%;
+            }
         }
 
         img {
             border-radius: 4px;;
             left: 50%;
             position: absolute;
+
+            @include tablet {
+                position: initial;
+                margin: 16px auto 0;
+                width: 80%;
+            }
         }
 
         .tags {
@@ -32,6 +42,12 @@
 
         .title {
             color: $nightCookie;
+        }
+
+        .container {
+            @include tablet {
+                flex-direction: column;
+            }
         }
     }
 
