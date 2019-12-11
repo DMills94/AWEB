@@ -46,7 +46,7 @@ const Portfolio = () => {
                     link={false}
                     image={Hub}
                 />
-                <PortfolioCard
+                {/* <PortfolioCard
                     type='large'
                     year='2019'
                     tag='Product design'
@@ -54,7 +54,7 @@ const Portfolio = () => {
                     text='Enterprise UX for property loan management (internal tool)'
                     link={false}
                     image={Bob}
-                />
+                /> */}
                 <PortfolioCard
                     type='wide'
                     year='2019'
